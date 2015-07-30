@@ -1,2 +1,2 @@
 name: stmu
-pygments: true
+rouge: true
