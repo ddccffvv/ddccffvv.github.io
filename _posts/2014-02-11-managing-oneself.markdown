@@ -5,8 +5,7 @@ date:   2014-02-11 12:30:37
 categories: summary
 ---
 
-Managing Oneself (Peter F. Drucker)
-================================
+Key insights of the book
 
 ## What are my strengths?
 

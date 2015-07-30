@@ -5,8 +5,7 @@ date:   2013-09-28 22:30:37
 categories: summary
 ---
 
-Good to Great: Why some companies make the leap and others don't (Jim Collins)
-================================
+Key insights from the book
 
 
 Level 5 Leadership

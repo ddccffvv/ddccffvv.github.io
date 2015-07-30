@@ -5,8 +5,6 @@ date:   2013-10-10 02:30:37
 categories: haskell
 ---
 
-First steps in Haskell
-======================
 
 I'm trying to learn Haskell.
 This post details some of the steps I'm going through.

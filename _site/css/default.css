@@ -30,3 +30,12 @@ body {
 .subcriber-btn {
 	background-color: #E0580C;
 }
+
+hr {
+	border-top: 3px solid #398809;
+}
+
+blockquote p {
+	font-weight: 500;
+	font-size: 35px;
+}
