@@ -1,2 +1,4 @@
 name: stmu
 rouge: true
+
+markdown: kramdown
