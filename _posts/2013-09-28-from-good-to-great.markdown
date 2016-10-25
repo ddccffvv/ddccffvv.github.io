@@ -2,6 +2,13 @@
 layout: post
 title:  "From good to great: summary"
 date:   2013-09-28 22:30:37
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 categories: summary
 ---
 

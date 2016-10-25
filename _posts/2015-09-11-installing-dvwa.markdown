@@ -3,6 +3,13 @@ layout: post
 title:  "Getting started in pentesting (with DVWA)"
 date:   2015-09-12 15:00:37
 categories: hacking web applications pentesting 
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 

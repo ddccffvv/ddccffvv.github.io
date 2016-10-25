@@ -3,6 +3,13 @@ layout: post
 title:  "Opportunities to use monoids"
 date:   2014-02-17 21:00:37
 categories: programming haskell
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 Recently, I was watching [this talk](http://www.youtube.com/watch?v=cMY1KVrJk0w) by Avi Bryant where he talks about using algebra in programming.

@@ -3,6 +3,13 @@ layout: post
 title:  "The testament of a furniture dealer"
 date:   2015-08-07 15:00:37
 categories: business ikea
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 On December 20th 1976, Ingvar Kamprad (the legendary owner of IKEA) wrote a 'testament' outlining his views on business and life.

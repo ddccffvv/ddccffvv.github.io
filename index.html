@@ -1,23 +1,10 @@
 ---
-layout: default
-title: stmu
+layout: home
+feature_image: feature-laptop
+title: stmu.co 
+desc: Fusing business and IT
+include_cta_btn: false
+cta_text: Newsletter
+cta_link: /about/
+cta_icon: fa-user-plus
 ---
-
-<div id="home">
-    <h1>About</h1>
-    <!--As somebody once quipped: most (business) books can be summarized in one page.
-    For better or worse, this site attempts to do just that.-->
-    A collection of thoughts
-    <br>
-    <hr>
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li>
-    	<b><a href="{{ post.url }}">{{ post.title }} ({{ post.date | date_to_string }})</a></b>
-	{{ post.excerpt }}
-	<hr>
-    </li>
-    {% endfor %}
-  </ul>
-</div>

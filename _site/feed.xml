@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stmu.co</title>
+    <description>focussed on typography, minimal design and
+ quality photography built using the Jekyll platform.
+</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 11 Oct 2016 21:30:54 +0200</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2016 21:30:54 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>It&#39;s 2016 and I still managed to have a unicode issue</title>
+        <description>&lt;p&gt;If you ever run into an issue that looks related to unicode/utf (you get characters such as “\00eb”), check if it’s installed on your system.&lt;/p&gt;
+
+&lt;p&gt;I recently was stumped by this, because my sinatra/ruby application worked on my dev machine, but not on the server (I’ve heard that one before! ;-) ).
+Turns out utf wasn’t installed on the server (a debian machine).&lt;/p&gt;
+
+&lt;p&gt;For future reference, it’s easy to install:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;append &lt;em&gt;en_US UTF-8&lt;/em&gt; to /etc/locale.gen&lt;/li&gt;
+  &lt;li&gt;run “locale-gen” as root&lt;/li&gt;
+  &lt;li&gt;(optional) export this variable in your terminal &lt;em&gt;export LANG=en_US.UTF-8&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Make the environment variable available for apache/passenger/ruby. You do this by putting &lt;em&gt;SetEnv LANG en_US.UTF-8&lt;/em&gt; in the appropriate vhost.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Mon, 08 Feb 2016 09:30:37 +0100</pubDate>
+        <link>/its-2015-and-i-still-had-a-unicode-issue</link>
+        <guid isPermaLink="true">/its-2015-and-i-still-had-a-unicode-issue</guid>
+        
+        
+        <category>summary</category>
+        
+      </item>
+    
+      <item>
+        <title>The Miracle Morning: summary</title>
+        <description>&lt;p&gt;Key insights from the book
+&lt;a href=&quot;http://www.amazon.co.uk/Miracle-Morning-Habits-Transform-Before/dp/1473632153/&quot;&gt;Amazon link&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;two-bad-things-that-will-prevent-you-from-getting-out-of-bed&quot;&gt;Two bad things that will prevent you from getting out of bed&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Rearview Mirror Syndrome&lt;/em&gt;: We are defining ourselves by what we have done in the past. We connect who we are now with who we were. By doing so, we limit ourselves as we try to build on what we know and discard (or don’t seek out) completely new things.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Isolating incidents&lt;/em&gt;: We justify “not going out for a run” because it’s “just this once”. But not doing something now also has an effect on the person we’ll be in the future. That means the impact of not going for a run now is much greater than it first seemed. Once we understand this, we’re much less lenient for ourselves. “How you do anything is how you do everything”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-to-wake-up-feeling-refreshed&quot;&gt;How to wake up feeling refreshed&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In the evening, tell yourself you’re going to wake up refreshed even if you only have a couple of hours sleep.&lt;/li&gt;
+  &lt;li&gt;Don’t snooze, just get up&lt;/li&gt;
+  &lt;li&gt;First thing out of bed: brush your teeth. You will feel fresher.&lt;/li&gt;
+  &lt;li&gt;As soon as you can: drink a full glas of water to rehydrate from breathing the whole night.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;morning-habits&quot;&gt;6 morning habits&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Have a moment of quietude and silence&lt;/li&gt;
+  &lt;li&gt;Affirmation:
+    &lt;ul&gt;
+      &lt;li&gt;Articulate and write down your goals for all areas in life&lt;/li&gt;
+      &lt;li&gt;Explain your motivations&lt;/li&gt;
+      &lt;li&gt;What are you doing that will get you to your goals?&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Visualise how your day will go perfectly. Imagine yourself laughing with your family, enjoying your work,…&lt;/li&gt;
+  &lt;li&gt;Read for 10 minutes&lt;/li&gt;
+  &lt;li&gt;Write for 5 mins&lt;/li&gt;
+  &lt;li&gt;Exercise for 20 mins&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 08 Feb 2016 09:30:37 +0100</pubDate>
+        <link>/miracle-morning</link>
+        <guid isPermaLink="true">/miracle-morning</guid>
+        
+        
+        <category>summary</category>
+        
+      </item>
+    
+      <item>
+        <title>Getting started in pentesting (with DVWA)</title>
+        <description>&lt;p&gt;Damn Vulnerable Web Application (DVWA) is a great tool to get started with web application pentesting.
+It lets you experiment with the basics and it doesn’t require you to install additional tools.
+In this post, we’ll explain how to install and configure it.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to get started is to just download the “live cd”. You can find it &lt;a href=&quot;http://www.dvwa.co.uk/DVWA-1.0.7.iso&quot;&gt;here&lt;/a&gt;
+You’ll also need to download VMware Player to run the live cd. Go ahead and download that &lt;a href=&quot;https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;First install VMware player, just follow the steps in the installer (next, next,…, finish).
+When the player is installed (you might have to reboot), start the application. You should see a screen resembling this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip1.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on “Create a New Virtual Machine” and select “Installer disk image file”. Use the “Browse” button to select the DVWA iso you downloaded earlier.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip2.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On the next screen, VMware will ask you which guest operating system to use. Just select “Linux” and use version “Debian 7 64bit”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip3.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click next and give your virtual machine a name you like. I’m using “DVWA”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip4.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click next. On the following screen, the defaults are ok and you can just click next again. Finally click finish to complete the virtual machine creation.
+Now you should see a screen with the new virtual machine in the “powered off” state.
+Click on “Play virtual machine”. Now just wait a bit until the machine is booted. It can take a while, but you should finally see the following screen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip5.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now DVWA is booted, but you still need to know where to find it. Click inside the screen and type the following: “ifconfig eth0” (that’s a zero).
+Write down the text in the circle, that’s the ip where you’ll find DVWA.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip7.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hit “ctrl+alt” to escape the VM and start a browser (I use chrome, but it doesn’t matter which one)
+Type the ip address you wrote down in the address bar and hit enter. You should be greeted by a login screen.
+You can log in by typing “admin” as the username and “password” as password.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/ScreenClip6.png&quot; alt=&quot;Create new machine&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you’re almost done. Find the button in the lower left corner that’s marked “DVWA Security”.
+Click it and select security “low” on the resulting page. Hit “submit” to confirm.&lt;/p&gt;
+
+&lt;p&gt;Now you’re ready to get started. I suggest you begin with “XSS Reflected”. Make sure to read the articles in “More info”!&lt;/p&gt;
+
+&lt;p&gt;I’ll post some tutorials on how to take on the challenges in the near future.
+Stay tuned and good luck!&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 12 Sep 2015 17:00:37 +0200</pubDate>
+        <link>/installing-dvwa</link>
+        <guid isPermaLink="true">/installing-dvwa</guid>
+        
+        
+        <category>hacking</category>
+        
+        <category>web</category>
+        
+        <category>applications</category>
+        
+        <category>pentesting</category>
+        
+      </item>
+    
+      <item>
+        <title>How to get started in offensive security</title>
+        <description>&lt;h2 id=&quot;start-with-web-application-pentesting&quot;&gt;Start with web application pentesting&lt;/h2&gt;
+
+&lt;p&gt;The security field is vast and you can’t become an expert in everything at once. Even better: most professionals specialize, why should you have to know everything?&lt;/p&gt;
+
+&lt;p&gt;A good starting point is web application security: it’s the default mode for new applications which means that there are enough of these that need security testing. Additionally, complex web applications are usually a beautiful mess of different technologies. That’s always a good breeding ground for security vulnerabilities.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-tools-should-i-use&quot;&gt;What tools should I use?&lt;/h2&gt;
+
+&lt;p&gt;Woah, hold your horses there young fella. 
+Yes it’s true: there are many excellent tools out there. But using them is like getting in the cockpit of an airplane without proper instruction: you’ll never get the thing of the ground. And if by chance you do, how are you going to get it back on the ground?&lt;/p&gt;
+
+&lt;p&gt;No, you’ll have to start by understanding the underlying principles. 
+Vulnerabilities are the result of insufficient understanding of fundamental principles. So, your job is to understand the fundamentals better than the other guy.
+The trick is that there’s no trick: we all have to start at the beginning and gain our skills and experience through hard work.&lt;/p&gt;
+
+&lt;h2 id=&quot;that-sounds-hard&quot;&gt;That sounds hard!&lt;/h2&gt;
+
+&lt;p&gt;Well it is! And that’s the point. 
+If it were easy, there would be no confusion. And that confusion? That’s where the security vulnerabilities lie..
+But don’t get discouraged now, it’s not impossible either. You just have to be persistent, that’s all.
+Do you like finding out how things work? Good, that’s enough. Once you know what makes something tick, you know how to break it.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-where-do-i-start&quot;&gt;So where do I start?&lt;/h2&gt;
+
+&lt;p&gt;Start with HTTP. Almost everything on the web runs on HTTP. You have to know how it works.
+I won’t send you to the RFC (just yet), but I predict you’ll read it anyway sometime in your career.
+Here is a good resource that will get you started: http://www.jmarshall.com/easy/http/
+A good way to become familiar with HTTP (besides to reading the tutorial) is to use an intercepting proxy.
+This is a tool that sits between the browser and the server. 
+If you learn by doing (like I do), an intercepting allows you to see all the HTTP requests your browser makes on your behalf. 
+It even lets you change them. Believe me: that’s something you’ll do a lot later on!
+Most in the industry use Burp, so I suggest that’s what you use. 
+They have a free version that’s more than enough for your use. Here’s a nice introduction tutorial: http://resources.infosecinstitute.com/burpsuite-tutorial/
+While you’re getting familiar with HTTP, make sure you pick up on all that html and javascript stuff that’s going on.
+It’ll come in handy in a bit.&lt;/p&gt;
+
+&lt;p&gt;Ah, and by the way, did you know that there’s a big problem with HTTP, it’s stateless… Can you tell me why that’s a problem and how we’re trying to fix it?&lt;/p&gt;
+
+&lt;h2 id=&quot;the-basics-of-vulnerabilities&quot;&gt;The basics of vulnerabilities&lt;/h2&gt;
+
+&lt;p&gt;Well, we’re getting in deep now. When talking about web application security, you’ll quickly hear the terms “sql injection” and “cross-site scripting” thrown around.
+Yes it’s true, these are pretty important. SQL-injection requires you to learn yet another technology, so we’ll leave that for now.&lt;/p&gt;
+
+&lt;p&gt;Cross-site scripting however, that’s something you’re ready for. Here’s a nice tutorial: http://www.steve.org.uk/Security/XSS/Tutorial/&lt;/p&gt;
+
+&lt;p&gt;As an aside, have you noticed that it’s difficult to test these things on somebody else’s website? It would be handy to have your own setup, right? 
+Well, that’s a great idea! The best way to learn about web applications (and to learn what can go wrong) is to write one yourself.
+Don’t be intimitated, we have fantastic frameworks these days that will help you out. Besides, you’ll have to learn basic programming anyways. 
+How else are you going to learn how a programmer thinks? 
+Most of the industry uses python, go with that. Flask is a simple python framework that’s made for writing web applications. 
+Additionally, it has a fantastic tutorial to get you started: http://flask.pocoo.org/docs/0.10/quickstart/&lt;/p&gt;
+
+&lt;p&gt;Back to sql injection. That’s a big one. Many of the breaches you read about in the news are the result of sql injection.
+You’ll have to learn some SQL. That’s the language we use to retrieve data from the database. It’s pretty powerful, that’s exactly what we’ll use to our advantage!
+To get started, it’s a good idea to hook up a database to your web application. Here’s how to do that: https://www.syncano.io/intro-flask-pt-2-creating-writing-databases/
+Once you’ve done that, you understand enough to experiment with sql injection.
+I like this tutorial: http://www.w3schools.com/sql/sql_injection.asp Can you replicate it in your Flask app?&lt;/p&gt;
+
+&lt;h2 id=&quot;where-to-go-from-here&quot;&gt;Where to go from here&lt;/h2&gt;
+
+&lt;p&gt;There are many other things to talk about, but we’ve already covered a lot of ground here.&lt;/p&gt;
+
+&lt;p&gt;After you’ve completed everything in here, you’re well on your way to becoming a pentester. Don’t get discouraged if it takes a couple of weeks to work through the post, it’s meant that way. Remember, nothing worth knowing comes easy. Just be persistent, you’ll get through it!&lt;/p&gt;
+
+&lt;p&gt;If you’re looking to go further, I suggest you get the “web application hacker’s handbook”. It’s available on amazon and the bible for all things web application security related. Good luck!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 02 Sep 2015 17:00:37 +0200</pubDate>
+        <link>/getting-started-with-web-appliction-hacking</link>
+        <guid isPermaLink="true">/getting-started-with-web-appliction-hacking</guid>
+        
+        
+        <category>hacking</category>
+        
+        <category>web</category>
+        
+        <category>applications</category>
+        
+        <category>pentesting</category>
+        
+      </item>
+    
+      <item>
+        <title>The testament of a furniture dealer</title>
+        <description>&lt;p&gt;On December 20th 1976, Ingvar Kamprad (the legendary owner of IKEA) wrote a ‘testament’ outlining his views on business and life.
+I’m baffled to discover how much insight he already gave away in 1976.
+The 16-page &lt;a href=&quot;http://www.ikea.com/ms/en_US/pdf/reports-downloads/the-testament-of-a-furniture-dealer.pdf&quot;&gt;document&lt;/a&gt; contains at least as much wisdom as the last 5 business books I read. 
+I found analogies with the lean startup method, toyota production, writings of Paul Graham and general life advice.
+What a wonderful document, no wonder Ingvar was so successful!&lt;/p&gt;
+
+&lt;h3 id=&quot;profit-gives-us-resources&quot;&gt;Profit gives us resources&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If we charge too much, we will not be able to offer the lowest prices. If we charge too little, we will not be able to build up resources. A wonderful problem! It forces us to develop products more economically, to puchase more efficiently and to be constantly stubborn in cost savings of all kinds. That is our secret. That is the foundation of our success.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reaching-good-results-with-small-means&quot;&gt;Reaching good results with small means&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Expensive solutions to any kind of problem are usually the work of mediocrity&lt;/strong&gt;. We have no respect for a solution until we know what it costs. An IKEA product without a price tag is always wrong!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Waste of resources is one of the greatest diseases of mankind.&lt;/strong&gt; […] But waste costs us even more in little everyday things: filing papers that you will never need again; spending time proving that you were right anyway; postponing a decision because you do not want to take responsibility now; telephoning when you could just as easily write a note or send a fax.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simplicity-is-a-virtue&quot;&gt;Simplicity is a virtue&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Do not forget that exaggerated planning is the most common cause of corporate death. &lt;strong&gt;Exaggerated planning constrains your freedom of action and leaves you less time to get things done.&lt;/strong&gt; Complicated planning paralyses. So let simplicity and common sense guide your planning.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is not just to cut costs that we avoid luxury hotels. We do not need fancy cars, posh titles, tailor-made uniforms or other status symbols. &lt;strong&gt;We rely on our own strength and our own will.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;doing-it-a-different-way&quot;&gt;Doing it a different way&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;By always asking why we are doing this or that, we can find new paths. By refusing to accept a pattern simply because it is well established, we make progress. We dare to do things differently!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Our protest against convention is not protest for tis own sake: it is a deliberate expression of our constant search for development and improvement.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;concentration---important-to-our-success&quot;&gt;Concentration - important to our success&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We can never do everything, everywhere, all at the same time. […] We will never be able to satisfy all tastes anyway. We must concentrate on our own profile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;taking-responsibility---a-privilege&quot;&gt;Taking responsibility - a privilege&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Only while sleeping one makes no mistakes. &lt;strong&gt;Making mistakes is the privilege of the active - of those who can correct their mistakes and put them right.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;No decision can claim to be the only right one&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It is always the mediocre people who are negative, who spend their time proving that they were not wrong. The strong person is always positive and looks forward. It is the positive people who win. They are always a joy to their colleagues and to themselves.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Winning does not mean someone else has to lose.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;If somebody steals a model from us, we do not sue them because a lawsuit is always negative. We solve the problem instead by developing a new and even better model.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;most-things-still-remain-to-be-done-a-glorious-future&quot;&gt;Most things still remain to be done. A glorious future!&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Happiness is not reaching your goal. Happiness is being on the way. It is our wonderful fate to be just at the beginning.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Many people cite experience as an excuse for not trying anything new. Still, it can be wise to rely on experience at times. But if you do so, you should preferably rely on you own. That is usually more valuable than lengthy investigations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Our ambition to develop ourselves as human beings and co-workers must remain high. Humbleness is the key word.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Bear in mind that time is your most important resource. You can do so much in 10 minutes. Ten minutes, once gone, are gone for good. You can never get them back.&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 07 Aug 2015 17:00:37 +0200</pubDate>
+        <link>/testament-of-a-furniture-dealer</link>
+        <guid isPermaLink="true">/testament-of-a-furniture-dealer</guid>
+        
+        
+        <category>business</category>
+        
+        <category>ikea</category>
+        
+      </item>
+    
+      <item>
+        <title>Integrating security and DevOps</title>
+        <description>&lt;p&gt;Lately, I’ve been fascinated by the DevOps movement.
+This relatively new movement has a number of concepts at its core that us security folks could (ab)use.
+‘Automated testing’, ‘infrastructure-as-code’ and ‘continuous integration or delivery’ help teams rapidly introduce new functionality by quickly detecting bugs and providing a clearly defined, automated and scalable infrastructure environment.&lt;/p&gt;
+
+&lt;p&gt;The same concepts are interesting from a security point-of-view. 
+If we are able to tap into automated tests or infrastructure as code, we would be able to provide timely and precise feedback on the security of a certain application or system.
+Too often now, we schedule our scans or perform our pentests and come up with a report weeks or months later.
+At a time when everybody else is working hard to bring down time-to-market, it is unacceptable to delay releases merely because security can’t keep up.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;At a time when everybody else is working hard to bring down time-to-market, it is unacceptable to delay releases merely because security can’t keep up.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I see at least two opportunities for security to be involved in the process: 1) use the infrastructure description to detect old or insecure packages and libraries and 2) introduce security tests in the test suite.&lt;/p&gt;
+
+&lt;h2 id=&quot;infrastructure-as-code&quot;&gt;Infrastructure as code&lt;/h2&gt;
+
+&lt;p&gt;Modern projects often keep a list of all dependencies in a file. Examples are the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; (Docker), &lt;code class=&quot;highlighter-rouge&quot;&gt;Vagrantfile&lt;/code&gt; (Vagrant) or a &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; (Ruby-on-Rails).
+I’ve included an extract of an example Gemfile. This clearly shows the libraries and versions in use. [^1]&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;source &amp;#39;https://rubygems.org&amp;#39;
+# Bundle edge Rails instead: gem &amp;#39;rails&amp;#39;, github: &amp;#39;rails/rails&amp;#39;
+gem &amp;#39;rails&amp;#39;, &amp;#39;4.1.8&amp;#39;
+gem &amp;#39;rake&amp;#39;, &amp;#39;10.3.0&amp;#39;
+# time ago js library
+gem &amp;#39;rails-timeago&amp;#39;, &amp;#39;~&amp;gt; 2.0&amp;#39;
+gem &amp;quot;adroit-age&amp;quot;
+# Use sqlite3 as the database for Active Record
+gem &amp;#39;sqlite3&amp;#39;
+# Use SCSS for stylesheets
+gem &amp;#39;sass-rails&amp;#39;, &amp;#39;~&amp;gt; 4.0.0&amp;#39;
+# Use Uglifier as compressor for JavaScript assets
+gem &amp;#39;uglifier&amp;#39;, &amp;#39;&amp;gt;= 1.3.0&amp;#39;
+# Use CoffeeScript for .js.coffee assets and views
+gem &amp;#39;coffee-rails&amp;#39;, &amp;#39;~&amp;gt; 4.0.0&amp;#39;&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/ddccffvv/25a66212b2fa6fe3602f.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;We can keep an eye on this list and automatically verify if there are known vulnerabilities for the libraries used in our organisation.
+Of course, the hard part here is not scanning the list, but finding a well-maintained and up-to-date vulnerability database we can automatically search through.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Use dependency lists to determine which libraries to track and provide specific feedback to each development team.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Various different communities are making efforts. These are some of the most complete-looking services:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hakiri.io/&quot;&gt;Hakiri&lt;/a&gt; (Rails) Keeps your project gems under constant supervision and will notify you when the next CVE vulnerability hits.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.versioneye.com/&quot;&gt;VersionEye&lt;/a&gt; (PHP) Notifies you if one of your libraries became vulnerable. The service is also able to notify you when a new version of a library came out for different languages.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gemnasium.com/&quot;&gt;Gemnasium&lt;/a&gt; (Various languages) Similar to VersionEye, this service will alert you when new versions of libaries become available. No mention of any security checks though.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As it stands now, it is very likely that we’ll have to keep on monitoring different security lists. 
+The dependency lists though are a valuable resource: they provide us with a specific list of all libraries and versions in use in our organisation. 
+We can use this to determine which libraries we need to track and allow us to provide specific feedback to each development team.&lt;/p&gt;
+
+&lt;h2 id=&quot;automated-testing&quot;&gt;Automated testing&lt;/h2&gt;
+
+&lt;p&gt;Many development shops now run various tests as often as possible. 
+A strategy used often is to run a reduced number of tests (keeping the runtime of these tests low) before accepting new code from a developer in the system.
+Periodically (for example: nightly) they run an extensive test suite against the latest build system. 
+Timing and number of different ‘testing tiers’ differ, but this is the general principle.
+The rationale behind running various tests early and often is to detect potential issues as soon as possible. 
+The faster and more accurate you can pinpoint a potential flaw, the easier and cheaper it is to fix. 
+It really is a powerful system.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The faster and more accurate you can pinpoint a potential flaw, the easier and cheaper it is to fix.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We, the security stakeholders, should really take advantage of these automated tests: We should help our developers to add security related tests to the suite.
+In a first step, we might try to bring our existing tools: different scanners and fuzzers. 
+That’s a good first step and will help us detect low-hanging fruit early. 
+There’s a caveat here: one false positive blocking the developers from shipping some feature and they will be ready to cut you out. 
+Be careful!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nobody wants to be the one who introduced a security issue in the payment calculation that allowed hackers to order goods for free.
+Let’s help our developers avoid that scenario.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The people developing new functionality and writing automated tests don’t often have a background or interest in security. 
+As a result, they only test if business critical flows can be completed correctly (the so-called “happy path”). 
+As security professionals, we know that security issues are the result of doing unexpected things and are – by definition – not on the happy path.
+I think this is a great opportunity to help developers and testers put ‘misuse-case tests’ in the suite.
+Of course, it is impossible to check for everything that can go wrong.
+But we can at least try to detect some obvious issues early.
+Nobody wants to be the one who introduced a security issue in the payment calculation that allowed hackers to order goods for free.
+Let’s help our developers avoid that scenario. 
+I’m sure you can think of malicious scenarios that apply to your particular business.
+Things that have gone wrong in the past are a good starting point.&lt;/p&gt;
+
+&lt;p&gt;[^1] Actually, the Gemfile doesn’t have all the versions because you can choose to not specify a version. In that case, the package manager will install the latest version. The ``Gemfile.lock’’ contains the exact versions of all libaries in use.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 05 Aug 2015 17:00:37 +0200</pubDate>
+        <link>/integrating-security-and-devops</link>
+        <guid isPermaLink="true">/integrating-security-and-devops</guid>
+        
+        
+        <category>devops</category>
+        
+        <category>security</category>
+        
+      </item>
+    
+      <item>
+        <title>Vim Cheatsheet (in progress)</title>
+        <description>&lt;p&gt;My vim cheatsheet (an ongoing effort)…&lt;/p&gt;
+
+&lt;h2 id=&quot;actions-inside-blocks&quot;&gt;Actions inside blocks&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cit - change inside tag: delete text in between tags and enter insert mode
+cat - change inside tag (include tags): delete text in between tags and enter insert mode (tags included)
+dit - delete inside tag
+dat - delete inside tag and tags
+ca&quot; - change text in between quotes
+da&quot; - delete text in between quotes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;searching&quot;&gt;Searching&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;set smartcase &quot;search case sensitive if at least one letter is uppercase, otherwise search case insensitive
+\c            &quot;search case insensitive (let this appear anywhere in search string)
+\C            &quot;search case sensitive (let this apprear anywhere in search string)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 02 Jul 2015 17:00:37 +0200</pubDate>
+        <link>/vim-cheatsheet</link>
+        <guid isPermaLink="true">/vim-cheatsheet</guid>
+        
+        
+        <category>vim</category>
+        
+      </item>
+    
+      <item>
+        <title>Three lessons from my first freelance project</title>
+        <description>&lt;p&gt;I recently completed my first paid freelance project. 
+Here are some things I wish I had known when I started:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Overestimate the required budget and time&lt;/strong&gt;: This really comes down to two things: don’t ask less because it’s your first project and don’t forget to account for time to educate the customer on thing you just delivered. I made both mistakes and ended up being quite frustrated due to time having to implement various last minute changes and tweaks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Communicate early and often&lt;/strong&gt;: I can break down the project in two parts. In the first part I was pretty passive: I only communicated when absolutely required and preferably by email. Because the customer started to become less responsive, I picked up the phone and started communicating much more proactive. That allowed me to better understand the customer demands and react much quicker. Additionally, I was able to manage customer expectations.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Invoice quickly&lt;/strong&gt;: I only invoiced at the last moment. This meant that I had to keep complying with the customer until the last moment because I had already invested so much time while he hadn’t yet paid anything. Had I been smart and courageous enough to ask for (at least in part) upfront payment, I would have had a lot less frustration (see point 1)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So, that’s what I did wrong. What could you have done better in your first freelance project?&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 17 Jun 2015 17:00:37 +0200</pubDate>
+        <link>/lessons-from-my-first-freelance-project</link>
+        <guid isPermaLink="true">/lessons-from-my-first-freelance-project</guid>
+        
+        
+        <category>programming</category>
+        
+        <category>side-project</category>
+        
+      </item>
+    
+      <item>
+        <title>Get someone to look at your code!</title>
+        <description>&lt;p&gt;Ten months ago, I agreed to build software for a driving school as a side project.
+Today the project is 90% done, so only the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ninety-ninety_rule&quot;&gt;other 90%&lt;/a&gt; remains.&lt;/p&gt;
+
+&lt;p&gt;I had been hacking away on the application for a couple of months before everything became too big to keep in my head.
+In a moment of enlightenment, I decided to hire an experienced developer on odesk to take a look at my code. In less than 2 hours he was able to tell me my what my problem was (fat controllers, skinny models).
+I now have better code reuse, less bugs and more testing and it only cost me $50 in developer fees.
+Peanuts compared to the time I gained as a result.&lt;/p&gt;
+
+&lt;p&gt;I’m the only developer on this project, and I’m not even a programmer in my day job.
+I choose to code the application in Ruby On Rails, as I had some familiarity with the framework.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I dove in: head first and learning on the way. As so many of us do.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I dove in: head first and learning on the way. As so many of us do.
+My code gradually became better as I discovered functionality provided by Rails and the proper way to do certain things.
+For a couple of months I hacked away, adding needed functionality.
+Along the way, the application became bigger and it was getting harder to keep everything in my head at once. 
+When I added or changed functionality, I now frequently broke other stuff.&lt;/p&gt;
+
+&lt;p&gt;Realizing my problem, I started looking into adding automated tests. 
+Yes, you read it right. 
+I hadn’t done that before. I never realised I needed them.
+After reading up on testing, I tried to write some meaningful tests for my application.
+But I never really got it working, it was as if I could not wrap my head around the tests.
+So I thought: I’ll just get someone on odesk to write some for me.
+That way, I’ll be able to look at them and write new ones myself.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I hired an experienced dev and encouraged him to tell me about coding errors I made.
+The guy took one short look at my code and told me where I’d gone wrong&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I hired an experienced dev and encouraged him to additionally tell me about coding errors I made.
+The guy took one short look at my code and told me where I’d gone wrong: too much code in the controllers, not enough in the models.
+I had difficulty accepting at first: I’d become pretty protective of my coding style.
+But after looking at it for a bit, there was no denying: I’d replicated functionality accross my controllers.
+Moving this in the models meant I could just use the method on the model itself, instead of writing the code each time.
+I had not even realised I’d made this mistake!
+In rectifying this, my controllers instantly became more readable, my application better testable and I removed bugs where I had forgotten to make the same changes accross the controllers.&lt;/p&gt;
+
+&lt;p&gt;Moral of the story: get other people to look at your code.
+If you don’t know anyone, pay someone to do it. 
+What you loose in money, you’ll gain in time!&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 15 Oct 2014 17:00:37 +0200</pubDate>
+        <link>/rails-after-hours-2</link>
+        <guid isPermaLink="true">/rails-after-hours-2</guid>
+        
+        
+        <category>programming</category>
+        
+        <category>side-project</category>
+        
+      </item>
+    
+      <item>
+        <title>Lesson from a side project</title>
+        <description>&lt;p&gt;Ten months ago, I agreed to build software for a driving school as a side project.
+Today the project is 90% done, so only the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ninety-ninety_rule&quot;&gt;other 90%&lt;/a&gt; remains.
+Below is one of the most important things I’ve learned.&lt;/p&gt;
+
+&lt;h3 id=&quot;clients-dont-know-what-they-want-but-they-know-whats-wrong-with-what-they-get&quot;&gt;Clients don’t know what they want, but they know what’s wrong with what they get.&lt;/h3&gt;
+&lt;p&gt;I found it very difficult to translate client requirements into code. 
+While clients were able to talk me through the current working of a feature, conversation abruptly stopped when I started asking about the way they would like the feature to work in the future. A question such as “How would you like to schedule your lessons?” is just to broad to answer. 
+I could try ask more specific questions, but there are so many details that only come up during implementation.
+In the end, I believe it’s up to the programmer to make his application a joy to use for the client.&lt;/p&gt;
+
+&lt;p&gt;After some experimentation, I settled for the following approach: 
+We’d have in depth discussions about how some feature should work.
+In addition to functional questions, I’d also ask a lot of questions with regards to usage: “How do you do &lt;em&gt;x&lt;/em&gt; right now?”, “How many times do you do this a day?”, “Is that a lot of effort?”, “What don’t you like about how &lt;em&gt;y&lt;/em&gt; currently works?”
+I’d then use this knowledge and as much common sense as I could muster to implement a minimal feature.
+I’d show them the new feature as soon as it was half-way working and ask them to use it while I was on the phone.
+The simple act of interacting with the solution seemed to make it easy to give valuable feedback: “Well, &lt;em&gt;a&lt;/em&gt; is ok but I can’t do edge case &lt;em&gt;x&lt;/em&gt;. And normally I do &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt; and &lt;em&gt;c&lt;/em&gt; in the same order but now I have to click a lot to do the same”.&lt;/p&gt;
+
+&lt;p&gt;With this feedback, I was able to improve significantly on the original implementation, to great satisfaction of my client.
+It seems to me that this method is pretty efficient maximising utility for the client while minimising implementation effort.&lt;/p&gt;
+
+&lt;p&gt;I’m settling on this method for now, but I’m interested to hear about your client communication in the comments!&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 22 Sep 2014 17:00:37 +0200</pubDate>
+        <link>/rails-after-hours</link>
+        <guid isPermaLink="true">/rails-after-hours</guid>
+        
+        
+        <category>programming</category>
+        
+        <category>side-project</category>
+        
+      </item>
+    
+  </channel>
+</rss>

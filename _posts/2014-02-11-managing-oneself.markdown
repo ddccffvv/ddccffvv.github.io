@@ -3,6 +3,13 @@ layout: post
 title:  "Managing Oneself: summary"
 date:   2014-02-11 12:30:37
 categories: summary
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 Key insights of the book

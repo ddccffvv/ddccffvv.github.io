@@ -3,6 +3,13 @@ layout: post
 title:  "Learning Haskell"
 date:   2013-10-10 02:30:37
 categories: haskell
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 

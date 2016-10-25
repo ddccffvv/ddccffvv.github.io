@@ -3,6 +3,13 @@ layout: post
 title:  "Lesson from a side project"
 date:   2014-09-22 15:00:37
 categories: programming side-project 
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 

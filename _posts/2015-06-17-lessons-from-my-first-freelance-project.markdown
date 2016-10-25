@@ -3,6 +3,13 @@ layout: post
 title:  "Three lessons from my first freelance project"
 date:   2015-06-17 15:00:37
 categories: programming side-project 
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 I recently completed my first paid freelance project. 

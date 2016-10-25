@@ -3,6 +3,13 @@ layout: post
 title:  "Integrating security and DevOps"
 date:   2015-08-05 15:00:37
 categories: devops security
+author_name : Stijn
+author_url : author/stijn
+author_avatar: stijn 
+show_avatar : false
+feature_image: feature-wolf
+show_related_posts: false
+square_related: recommend-wolf
 ---
 
 Lately, I've been fascinated by the DevOps movement.
