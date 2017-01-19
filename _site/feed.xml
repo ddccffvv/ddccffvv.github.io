@@ -7,9 +7,168 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Oct 2016 21:30:54 +0200</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2016 21:30:54 +0200</lastBuildDate>
+    <pubDate>Tue, 08 Nov 2016 10:17:19 +0100</pubDate>
+    <lastBuildDate>Tue, 08 Nov 2016 10:17:19 +0100</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Designing your life (Dave Evans, Bill Burnett)</title>
+        <description>&lt;p&gt;Below are the 5 mindsets the authors introduce to use to design your life.
+They struck a chord with me, so I put them here to ensure I would read them often.&lt;/p&gt;
+
+&lt;h3 id=&quot;curiosity&quot;&gt;Curiosity&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Makes everything new, makes you try things.&lt;/li&gt;
+  &lt;li&gt;Helps you to be one of those people that “knows how to get lucky”.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bias-to-action&quot;&gt;Bias to action&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Try things.&lt;/li&gt;
+  &lt;li&gt;Build your way forward.&lt;/li&gt;
+  &lt;li&gt;Designers try many things, test often, until they find a solution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reframing&quot;&gt;Reframing&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Taking a step back, helps us get unstuck.&lt;/li&gt;
+  &lt;li&gt;Makes sure we’re working on the right problem.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;awareness&quot;&gt;Awareness&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Know it’s a process, don’t have to be perfect every time/all the time.&lt;/li&gt;
+  &lt;li&gt;Helps you let go of a good but not great solution.&lt;/li&gt;
+  &lt;li&gt;Life is messy, but sometimes great things come out of the mess (sticky note,…)&lt;/li&gt;
+  &lt;li&gt;It’s a journey, make sure we enjoy ourselves while we’re on the way.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;radical-collaboration&quot;&gt;Radical collaboration&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ask for help.&lt;/li&gt;
+  &lt;li&gt;Best ideas often come from others.&lt;/li&gt;
+  &lt;li&gt;When you reach ut to the world, the world reaches right back.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 01 Nov 2016 09:30:37 +0100</pubDate>
+        <link>/designing-your-life.html</link>
+        <guid isPermaLink="true">/designing-your-life.html</guid>
+        
+        
+        <category>summary</category>
+        
+      </item>
+    
+      <item>
+        <title>Overview of the recent DDoS Attacks (September/October 2016)</title>
+        <description>&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;/h2&gt;
+
+&lt;p&gt;With the spreading prevalence of embedded devices online (the “internet of things”), DDoS organisations discovered a new source of bots. 
+Anti-DDoS providers are not prepared for the sudden enormous surge in data/bandwidth that can be directed towards their clients.
+In other words: at the moment, the offense is better than the defense.&lt;/p&gt;
+
+&lt;h2 id=&quot;high-profile-cases&quot;&gt;High profile cases&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;11/9: Krebs on security site was put offline by a DDoS attack twice the size of the biggest attack the anti-DDoS provider had ever seen (600+ GB/s).
+Traffic was a mix of  SYN, GET, POST floods + a substantial % of traffic was spoofed GRE traffic (= unusual).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;23/9: OVH was the target of a DDoS attack. 1000GB/s!!
+Traffic: unknown, probably identical as the Krebs attack.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;21/10: DynDNS was the target of a DDoS attack. DynDNS is the DNS provider for multiple sites. When it went down, its clients also were unreachable: reddit, twitter, paypal,…
+Traffic: targeting the Authorative DNS infrastructure (DNS requests to random subdomains)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As I understand it, the primary impact of this kind of attacks is on the available bandwidth of the provider.
+With such large volumes reported, this becomes the first problem (as real clients cannot get to the resource due to congestion of the pipe). 
+Of secondary importance is overwhelming of the service itself (application-level DDoS). 
+When the upstream provider becomes able to filter out enough traffic, the attacks can change to target the application itself.
+The bots are abundant enough to exhaust application resources, which will have the same effect from the end-user point of view.&lt;/p&gt;
+
+&lt;h2 id=&quot;characteristics-of-the-botnet&quot;&gt;Characteristics of the botnet&lt;/h2&gt;
+
+&lt;p&gt;The botnet is likely controlled by “Mirai”, software written to command and control mostly embedded devices. 
+The source code of this software was leaked on the internet in September and contains functionality for the standard attacks described above.
+At the time of writing, there are around 200k effected devices online (1.5 million affected devices in total), according to this &lt;a href=&quot;https://intel.malwaretech.com/botnet/mirai/?h=24&quot;&gt;tracker&lt;/a&gt;.
+The botnet is comprised of: 96% IOT (almost all IP cameras made by a Chinese vendor), 4% home routers, less than 1% compromised Linux hosts&lt;/p&gt;
+
+&lt;h2 id=&quot;mitigation&quot;&gt;Mitigation&lt;/h2&gt;
+&lt;p&gt;Providers are currently scrambling to add more capacity to their offerings.&lt;/p&gt;
+
+&lt;p&gt;On top of that, existing publications designed to limit spoofed IP traffic (a big enabler for most of these attacks) are being reconsidered. 
+Top options are trying to filter ingress traffic (&lt;a href=&quot;http://www.bcp38.info/index.php/Main_Page&quot;&gt;BCP38&lt;/a&gt;) and source address validation (&lt;a href=&quot;https://lasr.cs.ucla.edu/adas/&quot;&gt;SAVE&lt;/a&gt;).
+Implementing one of these would be a huge effort, requiring collaboration from a lot of actors on the internet and it remains to be seen how effective this countermeasures would be. (See &lt;a href=&quot;http://dyn.com/blog/recent-iot-based-attacks-what-is-the-impact-on-managed-dns-operators/&quot;&gt;here&lt;/a&gt; for a counter example).
+In the case of attacks targeting DNS infrastructure, a promising option is &lt;a href=&quot;https://kb.isc.org/article/AA-01000/0/A-Quick-Introduction-to-Response-Rate-Limiting.html&quot;&gt;response-rate limiting&lt;/a&gt;. 
+This mitigation allows a DNS server to drop requests when it sees a sudden surge in requests to a certain resource (with only very small variations).
+Implementing this countermeasure would limit the impact on the attack that brought DynDNS to its knees.&lt;/p&gt;
+
+&lt;p&gt;Taking down the bots (or preventing the control servers to take control) is also a massive undertaking.
+Embedded devices have a historically bad record on security (often shipping with known holes) and patching (it’s extremely difficult to remove the holes once the devices are in the open).
+Still, improving the security of these devices is the best long-term solution and will require effort from all of us in the next decade.&lt;/p&gt;
+
+&lt;p&gt;Currently, your best bet is to have an anti-ddos provider and be in close contact with them. The best ones on the market are: &lt;a href=&quot;https://www.akamai.com/us/en/resources/protect-against-ddos-attacks.jsp&quot;&gt;Akamai&lt;/a&gt;, &lt;a href=&quot;https://www.cloudflare.com/ddos/&quot;&gt;CloudFlare&lt;/a&gt; or &lt;a href=&quot;https://www.incapsula.com/ddos/&quot;&gt;Incapsula&lt;/a&gt;. Additionally, make sure you drop all unwanted traffic as early as possible (at provider if possible, at your network edge,…)&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 01 Nov 2016 09:30:37 +0100</pubDate>
+        <link>/overview-iot-ddos.html</link>
+        <guid isPermaLink="true">/overview-iot-ddos.html</guid>
+        
+        
+        <category>random</category>
+        
+      </item>
+    
+      <item>
+        <title>Questions to consider when writing policies, processes or other documents</title>
+        <description>&lt;p&gt;The ability to write things down is something very human, it’s one of the things that separates us from animals.
+Writing forces you to structure your thinking and approach a subject from different angles.
+It is also one of the ways in which humans can scale: when you document an approach, you allow others to follow your approach and apply it for themselves.&lt;/p&gt;
+
+&lt;p&gt;In an attempt to do just that, here are the questions I’m considering when writing new documentation. In no particular order:&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-the-goal&quot;&gt;What is the goal?&lt;/h3&gt;
+
+&lt;p&gt;What do I actually want to achieve? This section should convince others the document is worth reading.
+An additional advantage of explaining your goal is that you’re giving everyone a beacon they can work towards (and thus, making your goal a reality!)&lt;/p&gt;
+
+&lt;h3 id=&quot;who-is-the-audience&quot;&gt;Who is the audience?&lt;/h3&gt;
+&lt;p&gt;Think hard on how to approach the audience. Use their language and make sure to answer the question: “what’s in it for me?”&lt;/p&gt;
+
+&lt;h3 id=&quot;how-will-we-reach-the-goal&quot;&gt;How will we reach the goal?&lt;/h3&gt;
+&lt;p&gt;What will we do to achieve our objective?
+I like to think about this myself first, before looking for answers elsewhere (see point below), an idea I picked up from “how to read a book”.
+This forces me to think about potential solutions critically and assess strengths and weaknesses as well as completeness of the solution.&lt;/p&gt;
+
+&lt;h3 id=&quot;are-there-any-reference-frameworks-i-can-leverage&quot;&gt;Are there any reference frameworks I can leverage?&lt;/h3&gt;
+&lt;p&gt;Only very seldom we’re trying to do something so new, there aren’t any reference frameworks yet..
+In all other cases, reference frameworks allow you to build on the work of others. Personally, I find they often help me see the whole picture and often provide surprising insight into the relative importance of sub-areas.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-is-my-part-connected-with-the-rest-of-the-organisation&quot;&gt;How is my part connected with the rest of the organisation?&lt;/h3&gt;
+&lt;p&gt;You’re never on an island. Check what you’re doing and find out where you’re interacting with others. Then go ask those people what information they can deliver or what they’ll do with the information you’ll provide for them. Determine if they can deliver what you need and if you can provide what they need. Then agree on how and when the information will be exchanged.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-will-i-measure-what-i-want-to-achieve-kpis&quot;&gt;How will I measure what I want to achieve (KPI’s)?&lt;/h3&gt;
+&lt;p&gt;What gets measured, gets improved. Think very hard on what you want measured, because once people realise a number is important, they will make it go up (using the shortest available route). It’s very easy to improve the wrong thing.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 25 Oct 2016 10:30:37 +0200</pubDate>
+        <link>/writing-documents.html</link>
+        <guid isPermaLink="true">/writing-documents.html</guid>
+        
+        
+        <category>random</category>
+        
+      </item>
     
       <item>
         <title>It&#39;s 2016 and I still managed to have a unicode issue</title>
@@ -28,8 +187,8 @@ Turns out utf wasn’t installed on the server (a debian machine).&lt;/p&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 08 Feb 2016 09:30:37 +0100</pubDate>
-        <link>/its-2015-and-i-still-had-a-unicode-issue</link>
-        <guid isPermaLink="true">/its-2015-and-i-still-had-a-unicode-issue</guid>
+        <link>/its-2015-and-i-still-had-a-unicode-issue.html</link>
+        <guid isPermaLink="true">/its-2015-and-i-still-had-a-unicode-issue.html</guid>
         
         
         <category>summary</category>
@@ -76,8 +235,8 @@ Turns out utf wasn’t installed on the server (a debian machine).&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 08 Feb 2016 09:30:37 +0100</pubDate>
-        <link>/miracle-morning</link>
-        <guid isPermaLink="true">/miracle-morning</guid>
+        <link>/miracle-morning.html</link>
+        <guid isPermaLink="true">/miracle-morning.html</guid>
         
         
         <category>summary</category>
@@ -137,8 +296,8 @@ Stay tuned and good luck!&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 12 Sep 2015 17:00:37 +0200</pubDate>
-        <link>/installing-dvwa</link>
-        <guid isPermaLink="true">/installing-dvwa</guid>
+        <link>/installing-dvwa.html</link>
+        <guid isPermaLink="true">/installing-dvwa.html</guid>
         
         
         <category>hacking</category>
@@ -221,8 +380,8 @@ I like this tutorial: http://www.w3schools.com/sql/sql_injection.asp Can you rep
 
 </description>
         <pubDate>Wed, 02 Sep 2015 17:00:37 +0200</pubDate>
-        <link>/getting-started-with-web-appliction-hacking</link>
-        <guid isPermaLink="true">/getting-started-with-web-appliction-hacking</guid>
+        <link>/getting-started-with-web-appliction-hacking.html</link>
+        <guid isPermaLink="true">/getting-started-with-web-appliction-hacking.html</guid>
         
         
         <category>hacking</category>
@@ -326,8 +485,8 @@ What a wonderful document, no wonder Ingvar was so successful!&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 07 Aug 2015 17:00:37 +0200</pubDate>
-        <link>/testament-of-a-furniture-dealer</link>
-        <guid isPermaLink="true">/testament-of-a-furniture-dealer</guid>
+        <link>/testament-of-a-furniture-dealer.html</link>
+        <guid isPermaLink="true">/testament-of-a-furniture-dealer.html</guid>
         
         
         <category>business</category>
@@ -433,8 +592,8 @@ Things that have gone wrong in the past are a good starting point.&lt;/p&gt;
 &lt;p&gt;[^1] Actually, the Gemfile doesn’t have all the versions because you can choose to not specify a version. In that case, the package manager will install the latest version. The ``Gemfile.lock’’ contains the exact versions of all libaries in use.&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Aug 2015 17:00:37 +0200</pubDate>
-        <link>/integrating-security-and-devops</link>
-        <guid isPermaLink="true">/integrating-security-and-devops</guid>
+        <link>/integrating-security-and-devops.html</link>
+        <guid isPermaLink="true">/integrating-security-and-devops.html</guid>
         
         
         <category>devops</category>
@@ -468,132 +627,11 @@ da&quot; - delete text in between quotes
 
 </description>
         <pubDate>Thu, 02 Jul 2015 17:00:37 +0200</pubDate>
-        <link>/vim-cheatsheet</link>
-        <guid isPermaLink="true">/vim-cheatsheet</guid>
+        <link>/vim-cheatsheet.html</link>
+        <guid isPermaLink="true">/vim-cheatsheet.html</guid>
         
         
         <category>vim</category>
-        
-      </item>
-    
-      <item>
-        <title>Three lessons from my first freelance project</title>
-        <description>&lt;p&gt;I recently completed my first paid freelance project. 
-Here are some things I wish I had known when I started:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Overestimate the required budget and time&lt;/strong&gt;: This really comes down to two things: don’t ask less because it’s your first project and don’t forget to account for time to educate the customer on thing you just delivered. I made both mistakes and ended up being quite frustrated due to time having to implement various last minute changes and tweaks.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Communicate early and often&lt;/strong&gt;: I can break down the project in two parts. In the first part I was pretty passive: I only communicated when absolutely required and preferably by email. Because the customer started to become less responsive, I picked up the phone and started communicating much more proactive. That allowed me to better understand the customer demands and react much quicker. Additionally, I was able to manage customer expectations.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Invoice quickly&lt;/strong&gt;: I only invoiced at the last moment. This meant that I had to keep complying with the customer until the last moment because I had already invested so much time while he hadn’t yet paid anything. Had I been smart and courageous enough to ask for (at least in part) upfront payment, I would have had a lot less frustration (see point 1)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;So, that’s what I did wrong. What could you have done better in your first freelance project?&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 17 Jun 2015 17:00:37 +0200</pubDate>
-        <link>/lessons-from-my-first-freelance-project</link>
-        <guid isPermaLink="true">/lessons-from-my-first-freelance-project</guid>
-        
-        
-        <category>programming</category>
-        
-        <category>side-project</category>
-        
-      </item>
-    
-      <item>
-        <title>Get someone to look at your code!</title>
-        <description>&lt;p&gt;Ten months ago, I agreed to build software for a driving school as a side project.
-Today the project is 90% done, so only the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ninety-ninety_rule&quot;&gt;other 90%&lt;/a&gt; remains.&lt;/p&gt;
-
-&lt;p&gt;I had been hacking away on the application for a couple of months before everything became too big to keep in my head.
-In a moment of enlightenment, I decided to hire an experienced developer on odesk to take a look at my code. In less than 2 hours he was able to tell me my what my problem was (fat controllers, skinny models).
-I now have better code reuse, less bugs and more testing and it only cost me $50 in developer fees.
-Peanuts compared to the time I gained as a result.&lt;/p&gt;
-
-&lt;p&gt;I’m the only developer on this project, and I’m not even a programmer in my day job.
-I choose to code the application in Ruby On Rails, as I had some familiarity with the framework.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I dove in: head first and learning on the way. As so many of us do.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I dove in: head first and learning on the way. As so many of us do.
-My code gradually became better as I discovered functionality provided by Rails and the proper way to do certain things.
-For a couple of months I hacked away, adding needed functionality.
-Along the way, the application became bigger and it was getting harder to keep everything in my head at once. 
-When I added or changed functionality, I now frequently broke other stuff.&lt;/p&gt;
-
-&lt;p&gt;Realizing my problem, I started looking into adding automated tests. 
-Yes, you read it right. 
-I hadn’t done that before. I never realised I needed them.
-After reading up on testing, I tried to write some meaningful tests for my application.
-But I never really got it working, it was as if I could not wrap my head around the tests.
-So I thought: I’ll just get someone on odesk to write some for me.
-That way, I’ll be able to look at them and write new ones myself.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I hired an experienced dev and encouraged him to tell me about coding errors I made.
-The guy took one short look at my code and told me where I’d gone wrong&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I hired an experienced dev and encouraged him to additionally tell me about coding errors I made.
-The guy took one short look at my code and told me where I’d gone wrong: too much code in the controllers, not enough in the models.
-I had difficulty accepting at first: I’d become pretty protective of my coding style.
-But after looking at it for a bit, there was no denying: I’d replicated functionality accross my controllers.
-Moving this in the models meant I could just use the method on the model itself, instead of writing the code each time.
-I had not even realised I’d made this mistake!
-In rectifying this, my controllers instantly became more readable, my application better testable and I removed bugs where I had forgotten to make the same changes accross the controllers.&lt;/p&gt;
-
-&lt;p&gt;Moral of the story: get other people to look at your code.
-If you don’t know anyone, pay someone to do it. 
-What you loose in money, you’ll gain in time!&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 15 Oct 2014 17:00:37 +0200</pubDate>
-        <link>/rails-after-hours-2</link>
-        <guid isPermaLink="true">/rails-after-hours-2</guid>
-        
-        
-        <category>programming</category>
-        
-        <category>side-project</category>
-        
-      </item>
-    
-      <item>
-        <title>Lesson from a side project</title>
-        <description>&lt;p&gt;Ten months ago, I agreed to build software for a driving school as a side project.
-Today the project is 90% done, so only the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ninety-ninety_rule&quot;&gt;other 90%&lt;/a&gt; remains.
-Below is one of the most important things I’ve learned.&lt;/p&gt;
-
-&lt;h3 id=&quot;clients-dont-know-what-they-want-but-they-know-whats-wrong-with-what-they-get&quot;&gt;Clients don’t know what they want, but they know what’s wrong with what they get.&lt;/h3&gt;
-&lt;p&gt;I found it very difficult to translate client requirements into code. 
-While clients were able to talk me through the current working of a feature, conversation abruptly stopped when I started asking about the way they would like the feature to work in the future. A question such as “How would you like to schedule your lessons?” is just to broad to answer. 
-I could try ask more specific questions, but there are so many details that only come up during implementation.
-In the end, I believe it’s up to the programmer to make his application a joy to use for the client.&lt;/p&gt;
-
-&lt;p&gt;After some experimentation, I settled for the following approach: 
-We’d have in depth discussions about how some feature should work.
-In addition to functional questions, I’d also ask a lot of questions with regards to usage: “How do you do &lt;em&gt;x&lt;/em&gt; right now?”, “How many times do you do this a day?”, “Is that a lot of effort?”, “What don’t you like about how &lt;em&gt;y&lt;/em&gt; currently works?”
-I’d then use this knowledge and as much common sense as I could muster to implement a minimal feature.
-I’d show them the new feature as soon as it was half-way working and ask them to use it while I was on the phone.
-The simple act of interacting with the solution seemed to make it easy to give valuable feedback: “Well, &lt;em&gt;a&lt;/em&gt; is ok but I can’t do edge case &lt;em&gt;x&lt;/em&gt;. And normally I do &lt;em&gt;a&lt;/em&gt;, &lt;em&gt;b&lt;/em&gt; and &lt;em&gt;c&lt;/em&gt; in the same order but now I have to click a lot to do the same”.&lt;/p&gt;
-
-&lt;p&gt;With this feedback, I was able to improve significantly on the original implementation, to great satisfaction of my client.
-It seems to me that this method is pretty efficient maximising utility for the client while minimising implementation effort.&lt;/p&gt;
-
-&lt;p&gt;I’m settling on this method for now, but I’m interested to hear about your client communication in the comments!&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 22 Sep 2014 17:00:37 +0200</pubDate>
-        <link>/rails-after-hours</link>
-        <guid isPermaLink="true">/rails-after-hours</guid>
-        
-        
-        <category>programming</category>
-        
-        <category>side-project</category>
         
       </item>
     
