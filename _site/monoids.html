@@ -81,16 +81,18 @@ So, what’s to gain from understanding this algebra? At least improved code reu
 
 <p>As always, any suggestions or remarks are welcomed!</p>
 
-<h2 id="what-is-a-monoid">What is a monoid?</h2>
-<p>A <a href="http://en.wikipedia.org/wiki/Monoid">monoid</a> is an algabraic structure. It exists of a Set and an operation on that set (when A and B are elements of a set, A <em>operation</em> B yields C which is also an element of the set).
-The following conditions must hold:
-* <em>Associativity</em>: (a <em>operation</em> b) <em>operation</em> c == a <em>operation</em> (b <em>operation</em> c)
-* <em>Identity Element</em>: identity <em>operation</em> a == a == a <em>operation</em> identity</p>
+<p>##What is a monoid?
+A <a href="http://en.wikipedia.org/wiki/Monoid">monoid</a> is an algabraic structure. It exists of a Set and an operation on that set (when A and B are elements of a set, A <em>operation</em> B yields C which is also an element of the set).
+The following conditions must hold:</p>
+<ul>
+  <li><em>Associativity</em>: (a <em>operation</em> b) <em>operation</em> c == a <em>operation</em> (b <em>operation</em> c)</li>
+  <li><em>Identity Element</em>: identity <em>operation</em> a == a == a <em>operation</em> identity</li>
+</ul>
 
 <p>You can think of many monoids yourself. For example: the set of integers, the + operation and identity element 0. Or another example: the set of all possible strings, the concat operation and an empty string as identity element.</p>
 
-<h2 id="why-will-this-be-useful">Why will this be useful?</h2>
-<p>Above, I talked about code reusability and parallelism. Let’s start with parallelism.</p>
+<p>##Why will this be useful?
+Above, I talked about code reusability and parallelism. Let’s start with parallelism.</p>
 
 <p>To get started, we’ll use the following monoid: Set = integers; Operation = +; Identity = 0. Let’s assume for a moment that + is a very difficult operation and it takes a computer an hour to calculate the result.
 When asked to add integers 1 through 6, it is natural to solve the problem in the following way:</p>
@@ -118,7 +120,7 @@ There has to be a set, an operation and an identity method. Even when you don’
 take 2 elements as input, apply the operation and receive 1 element as output. Repeat until only one element is left.
 Because this method is always the same, you can just reuse it and plug different monoids in as needed. Still fuzzy? Have a look at the examples.</p>
 
-<h2 id="examples">Examples</h2>
+<p>##Examples</p>
 
 <p>I’m importing these libraries everywhere.</p>
 
@@ -229,14 +231,16 @@ average_result = aggregate average_data
 </code></pre>
 </div>
 
-<p>Next steps? Well, there is still a lot to learn:
-* <a href="https://speakerdeck.com/johnynek/algebra-for-analytics">Algebra for Analytics</a>
-* <a href="http://en.wikipedia.org/wiki/Bloom_filter">Bloom filters</a>
-* <a href="http://blog.aggregateknowledge.com/2012/10/25/sketch-of-the-day-hyperloglog-cornerstone-of-a-big-data-infrastructure/">HyperLogLog</a></p>
+<p>Next steps? Well, there is still a lot to learn:</p>
+<ul>
+  <li><a href="https://speakerdeck.com/johnynek/algebra-for-analytics">Algebra for Analytics</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Bloom_filter">Bloom filters</a></li>
+  <li><a href="http://blog.aggregateknowledge.com/2012/10/25/sketch-of-the-day-hyperloglog-cornerstone-of-a-big-data-infrastructure/">HyperLogLog</a></li>
+</ul>
 
 <p>What do you think? Suggestions and remarks are welcomed!</p>
 
-<h3 id="update">Update</h3>
+<p>###Update</p>
 
 <p><a href="http://www.reddit.com/r/haskell/comments/1yc2vg/opportunities_to_use_monoids/cfjads2">This</a> comment on Reddit by mstksg points out that monoids already have an <code class="highlighter-rouge">aggregate</code> function built in.
 <code class="highlighter-rouge">mconcat</code> is defined as <code class="highlighter-rouge">foldr mappend mempty</code>, almost exactly as I did.</p>
@@ -245,6 +249,18 @@ average_result = aggregate average_data
 
         </div><!-- main-content/col -->
     </div> <!--/row -->
+
+    <div id="disqus_thread"></div>
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//stmu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
 
 </main> <!-- /container -->
 

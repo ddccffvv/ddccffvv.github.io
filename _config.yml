@@ -18,7 +18,7 @@ nav_list:
 single_footer: '<p>&copy; 2016 <a href="/">latest posts</a></p>'
 footer_links:
     About: ['About', '/about']
-gems:
+plugins:
     - jekyll-gist
 
 
