@@ -10,7 +10,7 @@ title: Stijn
 
 # Stijn
 
-Stijn has an extensive background in development, security and product management.
+Stijn has a background in development, security and product management.
 
 He is naturally curious and always enjoys a good discussion.
 

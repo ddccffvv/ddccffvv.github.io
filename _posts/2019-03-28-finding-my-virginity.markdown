@@ -14,7 +14,7 @@ square_related: recommend-wolf
 
 Richard Branson is managing to lead a life completely in line with his own internal values. Or at least, that's how he tells it.
 "Finding my virginity" is a wonderful book from a chap in love with life and adventure.
-It is a testament to daring to be your own uncompromising, quirky self, instead of trying to fit in the image of the consumate professional. 
+It is a testament to daring to be your own uncompromising, quirky self, instead of trying to fit in the image of the consummate professional. 
 Even if you're not sure this approach will work, it's sure a lot more fun to live this way!
 
 A few (lot) of quotes and highlights below, for your enjoyment and my reference.
@@ -24,7 +24,7 @@ A few (lot) of quotes and highlights below, for your enjoyment and my reference.
 
 Spotting someone with potential and the same values as Richard. 
 
-> Brett was a great example. I’d first spotted his potential when he wrote an excellent note to a group of new starters. I began following his progress closely, and saw how he dealt with people in a personable manner and got the best out of them. He was someone who understood the little details of the airline industry that make all the difference; he knew management had to be accessible and visible, so would often get out and about, even rolling his sleeves up with the baggage handlers to heave bags and hear their issues from the frontline.
+> Brett was a great example. I’d first spotted his potential when he wrote an excellent note to a group of new starters. I began following his progress closely, and saw how he dealt with people in a personable manner and got the best out of them. He was someone who understood the little details of the airline industry that make all the difference; he knew management had to be accessible and visible, so would often get out and about, even rolling his sleeves up with the baggage handlers to heave bags and hear their issues from the front line.
 
 Richard wanted to offer Brett a new job. It didn't go as planned however: 
 
@@ -92,7 +92,7 @@ Not much to add: if someone with x businesses can make time for family, everyone
 
 > Despite Holly enjoying her role, I still had an inkling that she might like to join Virgin at some point. After all, we have always been a family business. I genuinely felt that Holly could achieve more and make a bigger positive impact in the world working under the Virgin umbrella; she could use her medical experience, but working with greater financial resources and variously skilled teams of people to make a difference.
 
-(this one also is about the difference between being an expert and using money, conections, multiple experts to have a broader impact)
+(this one also is about the difference between being an expert and using money, connections, multiple experts to have a broader impact)
 
 > As is my usual way on family time, I ignored the phone.
 

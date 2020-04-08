@@ -29,3 +29,8 @@ My vim cheatsheet (an ongoing effort)...
     \c            "search case insensitive (let this appear anywhere in search string)
     \C            "search case sensitive (let this apprear anywhere in search string)
 
+## Spell check
+
+    :set spell spelllang=en_us
+    :set nospell
+
