@@ -7,8 +7,8 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Apr 2020 14:41:02 +0200</pubDate>
-    <lastBuildDate>Wed, 08 Apr 2020 14:41:02 +0200</lastBuildDate>
+    <pubDate>Wed, 08 Apr 2020 14:55:47 +0200</pubDate>
+    <lastBuildDate>Wed, 08 Apr 2020 14:55:47 +0200</lastBuildDate>
     <generator>Jekyll v3.6.3</generator>
     
       <item>
@@ -168,8 +168,8 @@ The big thing, it seems to me, isn’t to know all the tips/tricks, but to be ab
 
 </description>
         <pubDate>Mon, 29 Apr 2019 10:30:37 +0200</pubDate>
-        <link>/trillion-dollar-coach.html</link>
-        <guid isPermaLink="true">/trillion-dollar-coach.html</guid>
+        <link>/blog/trillion-dollar-coach.html</link>
+        <guid isPermaLink="true">/blog/trillion-dollar-coach.html</guid>
         
         
         <category>book-highlights</category>
@@ -346,8 +346,8 @@ And above all: make sure you have the time to think things through and write it 
 
 </description>
         <pubDate>Thu, 15 Mar 2018 09:30:37 +0100</pubDate>
-        <link>/finding-my-virginity.html</link>
-        <guid isPermaLink="true">/finding-my-virginity.html</guid>
+        <link>/blog/finding-my-virginity.html</link>
+        <guid isPermaLink="true">/blog/finding-my-virginity.html</guid>
         
         
         <category>book-highlights</category>
@@ -477,8 +477,8 @@ The interest of the data subject does not have to be “legitimate” (unlike co
 
 </description>
         <pubDate>Thu, 15 Mar 2018 09:30:37 +0100</pubDate>
-        <link>/notes-gdpr-legitimate-interest.html</link>
-        <guid isPermaLink="true">/notes-gdpr-legitimate-interest.html</guid>
+        <link>/blog/notes-gdpr-legitimate-interest.html</link>
+        <guid isPermaLink="true">/blog/notes-gdpr-legitimate-interest.html</guid>
         
         
         <category>security</category>
@@ -503,8 +503,8 @@ The interest of the data subject does not have to be “legitimate” (unlike co
 &lt;/ol&gt;
 </description>
         <pubDate>Tue, 31 Jan 2017 09:30:37 +0100</pubDate>
-        <link>/reporting-data-breach-for-gdpr.html</link>
-        <guid isPermaLink="true">/reporting-data-breach-for-gdpr.html</guid>
+        <link>/blog/reporting-data-breach-for-gdpr.html</link>
+        <guid isPermaLink="true">/blog/reporting-data-breach-for-gdpr.html</guid>
         
         
         <category>security</category>
@@ -582,8 +582,8 @@ In the same vein as the advice in the previous point, make sure you pay a lot of
 
 </description>
         <pubDate>Tue, 31 Jan 2017 09:30:37 +0100</pubDate>
-        <link>/what-everyone-should-know-about-security.html</link>
-        <guid isPermaLink="true">/what-everyone-should-know-about-security.html</guid>
+        <link>/blog/what-everyone-should-know-about-security.html</link>
+        <guid isPermaLink="true">/blog/what-everyone-should-know-about-security.html</guid>
         
         
         <category>security</category>
@@ -675,8 +675,8 @@ This will show you care and people won’t be afraid to approach you with their 
 
 </description>
         <pubDate>Tue, 01 Nov 2016 09:30:37 +0100</pubDate>
-        <link>/security-policy-for-sme.html</link>
-        <guid isPermaLink="true">/security-policy-for-sme.html</guid>
+        <link>/blog/security-policy-for-sme.html</link>
+        <guid isPermaLink="true">/blog/security-policy-for-sme.html</guid>
         
         
         <category>summary</category>
@@ -729,8 +729,8 @@ They struck a chord with me, so I put them here to ensure I would read them ofte
 
 </description>
         <pubDate>Tue, 01 Nov 2016 09:30:37 +0100</pubDate>
-        <link>/designing-your-life.html</link>
-        <guid isPermaLink="true">/designing-your-life.html</guid>
+        <link>/blog/designing-your-life.html</link>
+        <guid isPermaLink="true">/blog/designing-your-life.html</guid>
         
         
         <category>summary</category>
@@ -793,8 +793,8 @@ Still, improving the security of these devices is the best long-term solution an
 
 </description>
         <pubDate>Tue, 01 Nov 2016 09:30:37 +0100</pubDate>
-        <link>/overview-iot-ddos.html</link>
-        <guid isPermaLink="true">/overview-iot-ddos.html</guid>
+        <link>/blog/overview-iot-ddos.html</link>
+        <guid isPermaLink="true">/blog/overview-iot-ddos.html</guid>
         
         
         <category>random</category>
@@ -834,8 +834,8 @@ What gets measured, gets improved. Think very hard on what you want measured, be
 
 </description>
         <pubDate>Tue, 25 Oct 2016 10:30:37 +0200</pubDate>
-        <link>/writing-documents.html</link>
-        <guid isPermaLink="true">/writing-documents.html</guid>
+        <link>/blog/writing-documents.html</link>
+        <guid isPermaLink="true">/blog/writing-documents.html</guid>
         
         
         <category>random</category>
@@ -859,8 +859,8 @@ Turns out utf wasn’t installed on the server (a debian machine).&lt;/p&gt;
 &lt;/ol&gt;
 </description>
         <pubDate>Mon, 08 Feb 2016 09:30:37 +0100</pubDate>
-        <link>/its-2015-and-i-still-had-a-unicode-issue.html</link>
-        <guid isPermaLink="true">/its-2015-and-i-still-had-a-unicode-issue.html</guid>
+        <link>/blog/its-2015-and-i-still-had-a-unicode-issue.html</link>
+        <guid isPermaLink="true">/blog/its-2015-and-i-still-had-a-unicode-issue.html</guid>
         
         
         <category>summary</category>

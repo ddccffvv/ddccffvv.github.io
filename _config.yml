@@ -7,17 +7,17 @@ description: > # Writer Theme is a responsive template
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 enable_retina: false
-permalink: :title.html
+permalink: /blog/:title.html
 nav_list:
-  Home : ['Home', '/', 'fa-home']
+  Home : ['Home', '/blog/', 'fa-home']
   #Home_Alt : ['Home Alt', '/home-alt', 'fa-home']
   #Home_Alt_2 : ['Home Alt 2', '/home-alt-2/', 'fa-home']
-  About : ['About', '/about', 'fa-anchor']
-  Contact : ['Contact', '/contact', 'fa-plane']
-  Author : ['Author', '/author/stijn', 'fa-user']
+  About : ['About', '/blog/about', 'fa-anchor']
+  Contact : ['Contact', '/blog/contact', 'fa-plane']
+  Author : ['Author', '/blog/author/stijn', 'fa-user']
 single_footer: '<p>&copy; 2016 <a href="/">latest posts</a></p>'
 footer_links:
-    About: ['About', '/about']
+    About: ['About', '/blog/about']
 plugins:
     - jekyll-gist
 
