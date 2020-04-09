@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>stmu.co | Opportunities to use monoids</title>
+    <meta name="description" content="Recently, I was watching this talk by Avi Bryant where he talks about using algebra in programming.The talk is geared towards distributed systems, but I thin...">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="canonical" href="/monoids.html">
+    <link rel="alternate" type="application/rss+xml" title="stmu.co" href="/feed.xml" />
+
+    <!--[if lt IE 9]>
+        <script src="/js/vendor/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+
+  <body class="">
+    <!-- if the user has javascript disabled they can still use the menu -->
+<noscript>
+    <div class="no-js-menu clearfix">
+        <ul>
+            
+                <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+            
+                <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
+            
+                <li><i class="fa fa-plane"></i><a href="/contact">Contact</a></li>
+            
+                <li><i class="fa fa-user"></i><a href="/author/stijn">Author</a></li>
+            
+        </ul>
+    </div>
+</noscript>
+<!-- end no script -->
+
+    <header class="hero-image" style="background-image: url(/img/feature-wolf.jpg);">
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+
+    <div id="menu-target">
+    <ul>
+        
+            <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+        
+            <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
+        
+            <li><i class="fa fa-plane"></i><a href="/contact">Contact</a></li>
+        
+            <li><i class="fa fa-user"></i><a href="/author/stijn">Author</a></li>
+        
+    </ul>
+</div>
+
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 single-content">
+            <p class="meta">
+              <a href="author/stijn">Stijn</a> in <a href='/category/programming'>Programming</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i>
+               
+               
+                  6 minutes
+                
+            </p>
+
+            <h1>Opportunities to use monoids</h1>
+
+            <p>Recently, I was watching <a href="http://www.youtube.com/watch?v=cMY1KVrJk0w">this talk</a> by Avi Bryant where he talks about using algebra in programming.
+The talk is geared towards distributed systems, but I think the concepts are applicable in general. Certainly when I realised that my earlier <a href="http://stmu.co/programming/haskell/2013/10/29/advancing-insight.html">trouble</a> also concerned monoids..
+So, what’s to gain from understanding this algebra? At least improved code reusability and parallelism. And an opportunity to satisfy your curiosity!</p>
+
+<p>As always, any suggestions or remarks are welcomed!</p>
+
+<p>##What is a monoid?
+A <a href="http://en.wikipedia.org/wiki/Monoid">monoid</a> is an algabraic structure. It exists of a Set and an operation on that set (when A and B are elements of a set, A <em>operation</em> B yields C which is also an element of the set).
+The following conditions must hold:</p>
+<ul>
+  <li><em>Associativity</em>: (a <em>operation</em> b) <em>operation</em> c == a <em>operation</em> (b <em>operation</em> c)</li>
+  <li><em>Identity Element</em>: identity <em>operation</em> a == a == a <em>operation</em> identity</li>
+</ul>
+
+<p>You can think of many monoids yourself. For example: the set of integers, the + operation and identity element 0. Or another example: the set of all possible strings, the concat operation and an empty string as identity element.</p>
+
+<p>##Why will this be useful?
+Above, I talked about code reusability and parallelism. Let’s start with parallelism.</p>
+
+<p>To get started, we’ll use the following monoid: Set = integers; Operation = +; Identity = 0. Let’s assume for a moment that + is a very difficult operation and it takes a computer an hour to calculate the result.
+When asked to add integers 1 through 6, it is natural to solve the problem in the following way:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(((((((1 + 2) + 3) + 4) + 5) + 6) + 7) + 8)
+</code></pre></div></div>
+
+<p>If we use this method, we would have the result in 7 hours. 
+Could we do it faster? Especially when we have multiple computers? Well yes, just solve the problem in the following way:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1 + 2) + (3 + 4) + (5 + 6) + (7 + 8)
+(3      +  7    ) + (11   ) + (15   )
+(      10       ) + (     26        )
+(                36                 )
+</code></pre></div></div>
+
+<p>The same calculation now takes 4 hours (but uses 4 computers, a nice trade-off if we have a lot of computers and a lack of time). 
+The advantage lies in the fact that adding is inherently parallel. It doesn’t matter if you start to add at the beginning, the end or in the middle, the end result is always the same.
+This parallelism stems from the associativity property, which you get with every monoid!</p>
+
+<p>Now, how about code reusability? To understand this you have to think about the fundamental concepts of the monoid. 
+There has to be a set, an operation and an identity method. Even when you don’t know which monoid you are working with, the method of solving is always the same:
+take 2 elements as input, apply the operation and receive 1 element as output. Repeat until only one element is left.
+Because this method is always the same, you can just reuse it and plug different monoids in as needed. Still fuzzy? Have a look at the examples.</p>
+
+<p>##Examples</p>
+
+<p>I’m importing these libraries everywhere.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import Data.Monoid
+import Data.List.Split
+</code></pre></div></div>
+
+<p>The sum example described in the previous section:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- summing
+-- some data to work with
+sum_data =  [AdditionTest c | c &lt;- [1..]]
+
+-- define a type to work with. Does anybody know if you can also define a monoid on Int?
+data AdditionTest = AdditionTest Int deriving (Show)
+
+-- define the monoid, addTest is the operation
+instance Monoid AdditionTest where
+    mempty = AdditionTest 0
+    mappend = addTest
+
+addTest :: AdditionTest -&gt; AdditionTest -&gt; AdditionTest
+addTest (AdditionTest x) (AdditionTest y) = AdditionTest (x+y)
+
+-- when a monoid is defined on a certain type, mappend points to its operation and mempty to the identity element
+-- foldl takes a list and applies an operation on it from left to right (with given start element)
+-- in this case, the operation is mappend and the start element is mempty
+sum_result = foldl mappend mempty $ take 100 sum_data
+
+-- doesn't matter if starting left or right...
+sum_result' = foldr mappend mempty $ take 100 sum_data
+
+-- or even different chunks and then combine the chunks...
+chunks = chunksOf 10 $ take 100 sum_data
+sum_result'' = foldr mappend mempty $ map (foldr mappend mempty) chunks
+</code></pre></div></div>
+
+<p>Let’s generalise our calculation method. We’ll define a new aggregation function that  just takes a list and applies the mappend function on the elements.
+The start element will again be mempty:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aggregate x = foldl mappend mempty x
+
+-- example of the general function with sum
+sum_result''' = aggregate $ take 100 sum_data
+</code></pre></div></div>
+
+<p>Now, we’ll be able to use the <code class="highlighter-rouge">aggregate</code> function for different monoids.
+For example, can we aggregate strings?</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--defining some data to work with
+string_data = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
+
+--a new type and corresponding monoid
+data StringAddition = StringAddition String deriving (Show)
+instance Monoid StringAddition where
+    mempty = StringAddition ""
+    mappend = stringAppend
+
+--the mappend operation
+stringAppend (StringAddition x) (StringAddition y) = StringAddition (x ++ y)
+
+--reusing the aggregate function
+sum_string = aggregate string_data
+</code></pre></div></div>
+
+<p>That was easy!
+How about finding a maximum?</p>
+
+<p>Apropos, does anybody know how to define a Monoid on all classes that derive Ordering? There is probably a problem with chosing a sane mempty, because ord doesn’t seem to have that?</p>
+
+<p>Apropos2, is it possible to define 2 monoids for the same data type? For example: an Int monoid for sum and one for product.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--same drill: defining type, data and monoid
+data MaxTest = MaxTest Int deriving (Show)
+max_data =  [MaxTest c | c &lt;- [1..]]
+
+instance Monoid MaxTest where
+    mempty = MaxTest 0
+    mappend = maxTest
+
+maxTest (MaxTest x) (MaxTest y) = MaxTest $ max x y
+
+max_result = aggregate $take 100 max_data
+</code></pre></div></div>
+
+<p>Averages?
+This one is a bit different, we cannot just add averages together.
+Instead, we just store the sum of all numbers and the amount of numbers we processed. 
+The average can then be calculated by doing sum/occurences.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data AverageData = AverageData { sum:: Int, occurences :: Int }  deriving (Show)
+
+average_data = [(AverageData 2 3), (AverageData 2 5)]
+
+instance Monoid AverageData where
+    mempty = AverageData 0 0
+    mappend = averageAggregate
+
+averageAggregate :: AverageData -&gt; AverageData -&gt; AverageData
+averageAggregate (AverageData a b) (AverageData x y) = AverageData (a+x) (b+y)
+
+average_result = aggregate average_data
+</code></pre></div></div>
+
+<p>Next steps? Well, there is still a lot to learn:</p>
+<ul>
+  <li><a href="https://speakerdeck.com/johnynek/algebra-for-analytics">Algebra for Analytics</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Bloom_filter">Bloom filters</a></li>
+  <li><a href="http://blog.aggregateknowledge.com/2012/10/25/sketch-of-the-day-hyperloglog-cornerstone-of-a-big-data-infrastructure/">HyperLogLog</a></li>
+</ul>
+
+<p>What do you think? Suggestions and remarks are welcomed!</p>
+
+<p>###Update</p>
+
+<p><a href="http://www.reddit.com/r/haskell/comments/1yc2vg/opportunities_to_use_monoids/cfjads2">This</a> comment on Reddit by mstksg points out that monoids already have an <code class="highlighter-rouge">aggregate</code> function built in.
+<code class="highlighter-rouge">mconcat</code> is defined as <code class="highlighter-rouge">foldr mappend mempty</code>, almost exactly as I did.</p>
+
+
+
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+    <div id="disqus_thread"></div>
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//stmu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+
+</main> <!-- /container -->
+
+<footer class="single">
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+            <img src="/img/stijn.jpg" class="user-icon " alt="user-image">
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="category-list">
+                <p>Published <span>Feb 17, 2014</span></p>
+                <p><a href="author/stijn">Stijn</a> in <a href='/category/programming'>Programming</a></p>
+
+                <div class="other-catergories">
+                    <h3>Also found in</h3>
+
+                    <ul>
+                        
+                        <li>
+                            <a href='/category/programming'>Programming</a>
+                            ,
+                        </li>
+                        
+                        <li>
+                            <a href='/category/programming'>Haskell</a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- end col -->
+        <div class="col-xs-12 col-sm-4">
+            <div class="social">
+                <p>Share this article</a>
+                <div class="social-links">
+                    <a class="social-icon" href="#" data-platform="twitter" data-message="" data-url="/monoids.html"><i class="fa fa-twitter"></i></a>
+
+                    <a class="social-icon" href="#" data-platform="facebook" data-message="" data-url="/monoids.html"><i class="fa fa-facebook-official"></i></a>
+                    <a class="social-icon" data-platform="mail"  href="mailto:stijn@stmu.co?body=/monoids.html"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+</div>
+
+
+    
+</footer>
+
+
+    <script src='/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js'></script>
+    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src='/js/vendor/jquery.jpanelmenu.min.js'></script>
+    <script type='application/javascript' src='/js/vendor/fastclick.min.js'></script>
+    
+    <script src=' /js/main.js'></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-42128858-2', 'auto');
+                  ga('send', 'pageview');
+
+                </script>
+
+  </body>
+
+</html>

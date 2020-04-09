@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>stmu.co | Overview of the recent DDoS Attacks (September/October 2016)</title>
+    <meta name="description" content="##The Problem">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="canonical" href="/blog/overview-iot-ddos.html">
+    <link rel="alternate" type="application/rss+xml" title="stmu.co" href="/feed.xml" />
+
+    <!--[if lt IE 9]>
+        <script src="/js/vendor/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+
+  <body class="">
+    <!-- if the user has javascript disabled they can still use the menu -->
+<noscript>
+    <div class="no-js-menu clearfix">
+        <ul>
+            
+                <li><i class="fa fa-home"></i><a href="/blog/">Home</a></li>
+            
+                <li><i class="fa fa-anchor"></i><a href="/blog/about">About</a></li>
+            
+                <li><i class="fa fa-plane"></i><a href="/blog/contact">Contact</a></li>
+            
+                <li><i class="fa fa-user"></i><a href="/blog/author/stijn">Author</a></li>
+            
+        </ul>
+    </div>
+</noscript>
+<!-- end no script -->
+
+    <header class="hero-image" style="background-image: url(/img/feature-paper.jpg);">
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+
+    <div id="menu-target">
+    <ul>
+        
+            <li><i class="fa fa-home"></i><a href="/blog/">Home</a></li>
+        
+            <li><i class="fa fa-anchor"></i><a href="/blog/about">About</a></li>
+        
+            <li><i class="fa fa-plane"></i><a href="/blog/contact">Contact</a></li>
+        
+            <li><i class="fa fa-user"></i><a href="/blog/author/stijn">Author</a></li>
+        
+    </ul>
+</div>
+
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 single-content">
+            <p class="meta">
+              <a href="author/stijn">Stijn</a> in <a href='/category/random'>Random</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i>
+               
+               
+                  3 minutes
+                
+            </p>
+
+            <h1>Overview of the recent DDoS Attacks (September/October 2016)</h1>
+
+            <p>##The Problem</p>
+
+<p>With the spreading prevalence of embedded devices online (the “internet of things”), DDoS organisations discovered a new source of bots. 
+Anti-DDoS providers are not prepared for the sudden enormous surge in data/bandwidth that can be directed towards their clients.
+In other words: at the moment, the offense is better than the defense.</p>
+
+<p>##High profile cases</p>
+
+<ul>
+  <li>
+    <p>11/9: Krebs on security site was put offline by a DDoS attack twice the size of the biggest attack the anti-DDoS provider had ever seen (600+ GB/s).
+Traffic was a mix of  SYN, GET, POST floods + a substantial % of traffic was spoofed GRE traffic (= unusual).</p>
+  </li>
+  <li>
+    <p>23/9: OVH was the target of a DDoS attack. 1000GB/s!!
+Traffic: unknown, probably identical as the Krebs attack.</p>
+  </li>
+  <li>
+    <p>21/10: DynDNS was the target of a DDoS attack. DynDNS is the DNS provider for multiple sites. When it went down, its clients also were unreachable: reddit, twitter, paypal,…
+Traffic: targeting the Authorative DNS infrastructure (DNS requests to random subdomains)</p>
+  </li>
+</ul>
+
+<p>As I understand it, the primary impact of this kind of attacks is on the available bandwidth of the provider.
+With such large volumes reported, this becomes the first problem (as real clients cannot get to the resource due to congestion of the pipe). 
+Of secondary importance is overwhelming of the service itself (application-level DDoS). 
+When the upstream provider becomes able to filter out enough traffic, the attacks can change to target the application itself.
+The bots are abundant enough to exhaust application resources, which will have the same effect from the end-user point of view.</p>
+
+<p>##Characteristics of the botnet</p>
+
+<p>The botnet is likely controlled by “Mirai”, software written to command and control mostly embedded devices. 
+The source code of this software was leaked on the internet in September and contains functionality for the standard attacks described above.
+At the time of writing, there are around 200k effected devices online (1.5 million affected devices in total), according to this <a href="https://intel.malwaretech.com/botnet/mirai/?h=24">tracker</a>.
+The botnet is comprised of: 96% IOT (almost all IP cameras made by a Chinese vendor), 4% home routers, less than 1% compromised Linux hosts</p>
+
+<p>##Mitigation
+Providers are currently scrambling to add more capacity to their offerings.</p>
+
+<p>On top of that, existing publications designed to limit spoofed IP traffic (a big enabler for most of these attacks) are being reconsidered. 
+Top options are trying to filter ingress traffic (<a href="http://www.bcp38.info/index.php/Main_Page">BCP38</a>) and source address validation (<a href="https://lasr.cs.ucla.edu/adas/">SAVE</a>).
+Implementing one of these would be a huge effort, requiring collaboration from a lot of actors on the internet and it remains to be seen how effective this countermeasures would be. (See <a href="http://dyn.com/blog/recent-iot-based-attacks-what-is-the-impact-on-managed-dns-operators/">here</a> for a counter example).
+In the case of attacks targeting DNS infrastructure, a promising option is <a href="https://kb.isc.org/article/AA-01000/0/A-Quick-Introduction-to-Response-Rate-Limiting.html">response-rate limiting</a>. 
+This mitigation allows a DNS server to drop requests when it sees a sudden surge in requests to a certain resource (with only very small variations).
+Implementing this countermeasure would limit the impact on the attack that brought DynDNS to its knees.</p>
+
+<p>Taking down the bots (or preventing the control servers to take control) is also a massive undertaking.
+Embedded devices have a historically bad record on security (often shipping with known holes) and patching (it’s extremely difficult to remove the holes once the devices are in the open).
+Still, improving the security of these devices is the best long-term solution and will require effort from all of us in the next decade.</p>
+
+<p>Currently, your best bet is to have an anti-ddos provider and be in close contact with them. The best ones on the market are: <a href="https://www.akamai.com/us/en/resources/protect-against-ddos-attacks.jsp">Akamai</a>, <a href="https://www.cloudflare.com/ddos/">CloudFlare</a> or <a href="https://www.incapsula.com/ddos/">Incapsula</a>. Additionally, make sure you drop all unwanted traffic as early as possible (at provider if possible, at your network edge,…)</p>
+
+
+
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+    <div id="disqus_thread"></div>
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//stmu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+
+</main> <!-- /container -->
+
+<footer class="single">
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+            <img src="/img/stijn.jpg" class="user-icon " alt="user-image">
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="category-list">
+                <p>Published <span>Nov 1, 2016</span></p>
+                <p><a href="author/stijn">Stijn</a> in <a href='/category/random'>Random</a></p>
+
+                <div class="other-catergories">
+                    <h3>Also found in</h3>
+
+                    <ul>
+                        
+                        <li>
+                            <a href='/category/random'>Random</a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- end col -->
+        <div class="col-xs-12 col-sm-4">
+            <div class="social">
+                <p>Share this article</a>
+                <div class="social-links">
+                    <a class="social-icon" href="#" data-platform="twitter" data-message="" data-url="/blog/overview-iot-ddos.html"><i class="fa fa-twitter"></i></a>
+
+                    <a class="social-icon" href="#" data-platform="facebook" data-message="" data-url="/blog/overview-iot-ddos.html"><i class="fa fa-facebook-official"></i></a>
+                    <a class="social-icon" data-platform="mail"  href="mailto:stijn@stmu.co?body=/blog/overview-iot-ddos.html"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+</div>
+
+
+    
+</footer>
+
+
+    <script src='/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js'></script>
+    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src='/js/vendor/jquery.jpanelmenu.min.js'></script>
+    <script type='application/javascript' src='/js/vendor/fastclick.min.js'></script>
+    
+    <script src=' /js/main.js'></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-42128858-2', 'auto');
+                  ga('send', 'pageview');
+
+                </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>stmu.co | Learning Haskell</title>
+    <meta name="description" content="I’m trying to learn Haskell.This post details some of the steps I’m going through.">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="canonical" href="/learning-haskell.html">
+    <link rel="alternate" type="application/rss+xml" title="stmu.co" href="/feed.xml" />
+
+    <!--[if lt IE 9]>
+        <script src="/js/vendor/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+
+  <body class="">
+    <!-- if the user has javascript disabled they can still use the menu -->
+<noscript>
+    <div class="no-js-menu clearfix">
+        <ul>
+            
+                <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+            
+                <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
+            
+                <li><i class="fa fa-plane"></i><a href="/contact">Contact</a></li>
+            
+                <li><i class="fa fa-user"></i><a href="/author/stijn">Author</a></li>
+            
+        </ul>
+    </div>
+</noscript>
+<!-- end no script -->
+
+    <header class="hero-image" style="background-image: url(/img/feature-wolf.jpg);">
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+
+    <div id="menu-target">
+    <ul>
+        
+            <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+        
+            <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
+        
+            <li><i class="fa fa-plane"></i><a href="/contact">Contact</a></li>
+        
+            <li><i class="fa fa-user"></i><a href="/author/stijn">Author</a></li>
+        
+    </ul>
+</div>
+
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 single-content">
+            <p class="meta">
+              <a href="author/stijn">Stijn</a> in <a href='/category/haskell'>Haskell</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i>
+               
+               
+                  4 minutes
+                
+            </p>
+
+            <h1>Learning Haskell</h1>
+
+            <p>I’m trying to learn Haskell.
+This post details some of the steps I’m going through.</p>
+
+<p><em>Setup:</em></p>
+
+<p>If you are on Ubuntu or Debian (like me): <code class="highlighter-rouge">sudo apt-get install ghc6</code> should do the trick.
+“GHC” stands for “Glasgow Haskell Compiler”, it contains a compiler (ghc) and an interpreter (ghci).</p>
+
+<p><em>Hello World:</em></p>
+
+<p>Printing “hello world” is simple. Start ghci and type:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print "Hello World"
+</code></pre></div></div>
+
+<p>This should print “Hello World” on the screen.</p>
+
+<p>I often like to have file containing code in my editor and then load and execute code in that file in the interpreter.
+Right now, I simply have a file called <code class="highlighter-rouge">first_steps.hs</code>. I then start ghci from the same directory as the file.</p>
+
+<p>To put code in a file, you need to first wrap it in a function. That is easy enough, just put the following in your source file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>printHello = print "Hello"
+</code></pre></div></div>
+
+<p>The simple fact that we assign code to a name seems to be enough to define a function, interesting!
+Then, switching back to ghci, you can use <code class="highlighter-rouge">:load first_steps</code> to load the file in the interpreter. After that, type <code class="highlighter-rouge">printHello</code> to execute the function.</p>
+
+<p><em>Lists:</em></p>
+
+<p>Now that we have the obligatory “hello world” example behind us, let’s turn our attention to lists.
+I found that these are often important in functional languages and help understand the concepts of the language.</p>
+
+<p>The goal will be to write a function <code class="highlighter-rouge">reverseList</code> that does just what the name indicates: reverse a list.
+As Haskell is a functional language, I had a hunch that recursion would be involved.
+To reverse a list using recursion, one can simply use the following algorithm:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 1. If the list is empty, we are done and return the empty list
+ 2. Split the list in two parts: "First element" and "Rest of list".
+ (First element is referred to as "head", rest of list is called "tail)
+ 3. Reverse tail and append head to the result.
+</code></pre></div></div>
+
+<p>A simple example will illustrate the algorithm:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Start: [1,2,3,4]
+Step 1: Head = 1, Tail = [2,3,4]
+        Reverse [2,3,4] and append 1
+Step 2: Head = 2, Tail = [3,4]
+	    Reverse [3,4] and append 2 (and append 1)
+Step 3: Head = 3, Tail = [4]
+        Reverse [4] and append 3 (and append 2 (and append 1))
+Step 4: Head = 4, Tail = [] (&lt;- the empty list)
+        Reverse [] and append 4 (and append 3 (and append 2 (and append 1)))
+Step 5: The list is empty (point 1 in the algorithm description)
+        Return [] and append 4 and append 3 and append 2 and append 1
+</code></pre></div></div>
+
+<p>Do you see the pattern emerging?</p>
+
+<p>Now, we only need to translate the pseudocode in real haskell code.
+We’ll use the concept of “pattern matching” to arrive at a simple implementation. Pattern matching simply means that Haskell will look at the arguments given to the function. Depending on what they are (which pattern they satisfy), different code will be executed.</p>
+
+<p>The simplest part of our algorithm is when the <code class="highlighter-rouge">reverseList</code> function is given an empty list. In that case, we simply return the empty list.
+Let’s add the following code to our <code class="highlighter-rouge">first-steps.hs</code> file (only the first line):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reverseList [ ] = []
+--           ^-- pattern	
+</code></pre></div></div>
+
+<p>Save the file and reload it in ghci, using the <code class="highlighter-rouge">:reload</code> command.
+You can then try to call the function with an empty list as the argument: <code class="highlighter-rouge">reverseList []</code>, it should return an empty list.
+What happens if you try to call the function with another list, such as <code class="highlighter-rouge">[1,2,3,4]</code>? You will get an error complaining about non-exhaustive patterns… That is because we only told Haskell what to do when the argument is an empty list, that was the pattern we provided (indicated by the arrow.
+For fun, we could add a pattern for a list with only one or more elements:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reverseList [] = []
+reverseList [Element] = [Element]
+reverseList [Element1, Element2] = [Element2, Element1]
+</code></pre></div></div>
+
+<p>You can load this code in ghci (<code class="highlighter-rouge">:reload</code>) and try it out, but it is obvious that this approach is not really scalable.
+We need to find a way to complete steps 2 and 3 in our algorithm.</p>
+
+<p>To split the list, we’ll again use pattern matching. Haskell provides us with the <code class="highlighter-rouge">(x:xs)</code> pattern. This pattern splits the list in two parts: a head (x) and a tail (xs).
+From here, it is easy to arrive at step 3, just call the reverseList function again on the tail of the list.
+Adapt the code to look as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>reverseList [] = []
+reverseList (x:xs) = reverseList xs ++ [x]
+</code></pre></div></div>
+
+<p>The second line splits the argument in a head and a tail, it then takes the tail and reverses it and finally appends the head. The head is between brackets because the append function takes 2 lists.
+Now, just reload the file and try to reverse some lists:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*Main&gt; reverseList [1,2,3,4,5]
+[5,4,3,2,1]
+</code></pre></div></div>
+
+<p>The function even works with other data types, such as a list of strings:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*Main&gt; reverseList ["a","b","c","d","e"]
+["e","d","c","b","a"]
+</code></pre></div></div>
+
+<p>Voila, we’ve reached our goal for today: lists have been inverted. More next time!</p>
+
+
+
+        </div><!-- main-content/col -->
+    </div> <!--/row -->
+
+    <div id="disqus_thread"></div>
+    <script>
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//stmu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+
+</main> <!-- /container -->
+
+<footer class="single">
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+            <img src="/img/stijn.jpg" class="user-icon " alt="user-image">
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="category-list">
+                <p>Published <span>Oct 10, 2013</span></p>
+                <p><a href="author/stijn">Stijn</a> in <a href='/category/haskell'>Haskell</a></p>
+
+                <div class="other-catergories">
+                    <h3>Also found in</h3>
+
+                    <ul>
+                        
+                        <li>
+                            <a href='/category/haskell'>Haskell</a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- end col -->
+        <div class="col-xs-12 col-sm-4">
+            <div class="social">
+                <p>Share this article</a>
+                <div class="social-links">
+                    <a class="social-icon" href="#" data-platform="twitter" data-message="" data-url="/learning-haskell.html"><i class="fa fa-twitter"></i></a>
+
+                    <a class="social-icon" href="#" data-platform="facebook" data-message="" data-url="/learning-haskell.html"><i class="fa fa-facebook-official"></i></a>
+                    <a class="social-icon" data-platform="mail"  href="mailto:stijn@stmu.co?body=/learning-haskell.html"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+</div>
+
+
+    
+</footer>
+
+
+    <script src='/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js'></script>
+    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src='/js/vendor/jquery.jpanelmenu.min.js'></script>
+    <script type='application/javascript' src='/js/vendor/fastclick.min.js'></script>
+    
+    <script src=' /js/main.js'></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-42128858-2', 'auto');
+                  ga('send', 'pageview');
+
+                </script>
+
+  </body>
+
+</html>
