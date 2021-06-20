@@ -88,7 +88,7 @@ The outcome of this parser gave an overview of actions that happened in the game
 Satisfied with my little experiment using Parsec, I then wanted to aggregate these actions and arrive at a traditional <em>box-score</em>.
 The parser output and needed data-types look as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data Event = Action String ActionType deriving (Show)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data Event = Action String ActionType deriving (Show)
 data ActionType = MissedShot
                 | MadeShot
                 | Rebound
@@ -99,7 +99,7 @@ output = [Action "PlayerA" MissedShot, Action "PlayerB" Rebound, Action "PlayerB
 
 <p>The new output should be a list of players with aggregated stats, so I created (after learning about Data.Map) a player data type as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import qualified Data.Map as M
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import qualified Data.Map as M
 data Player = Player Int Int Int deriving (Show)
 --- integers stand for: made shots, missed shots, rebounds
 type Players = M.map String Player
@@ -109,7 +109,7 @@ type Players = M.map String Player
 I then defined a function that takes the list of events together with the existing players and updates these existing players with each event.
 It looked as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addRebound :: Maybe Player -&gt; Player
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>addRebound :: Maybe Player -&gt; Player
 addRebound (Just (Player made missed rebound)) = Player made missed (rebound + 1)
 addRebound Nothing = Player 0 0 1 
 
@@ -143,9 +143,9 @@ There should be a “zeroPlayer”, with all fields initialised to 0.
 There should also be a “reboundPlayer”, a player with 1 rebound.
 Similar for the “madeShotPlayer” and “missedShotPlayer”.
 By defining these players and a generic player addition function, the different add… methods can be eliminated.
-I also changed my parser slightly so the actions are of type <code class="highlighter-rouge">Action String Player</code> and I used the “record” syntax for data type definition.</p>
+I also changed my parser slightly so the actions are of type <code class="language-plaintext highlighter-rouge">Action String Player</code> and I used the “record” syntax for data type definition.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import qualified Data.Map as M
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import qualified Data.Map as M
 data Player = Player { madeShot :: Int, missedShot :: Int, rebound :: Int} deriving (Show)
 data Event= Action String Player deriving (Show)
 

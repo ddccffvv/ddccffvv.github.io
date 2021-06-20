@@ -97,13 +97,13 @@ Above, I talked about code reusability and parallelism. Let’s start with paral
 <p>To get started, we’ll use the following monoid: Set = integers; Operation = +; Identity = 0. Let’s assume for a moment that + is a very difficult operation and it takes a computer an hour to calculate the result.
 When asked to add integers 1 through 6, it is natural to solve the problem in the following way:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(((((((1 + 2) + 3) + 4) + 5) + 6) + 7) + 8)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(((((((1 + 2) + 3) + 4) + 5) + 6) + 7) + 8)
 </code></pre></div></div>
 
 <p>If we use this method, we would have the result in 7 hours. 
 Could we do it faster? Especially when we have multiple computers? Well yes, just solve the problem in the following way:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1 + 2) + (3 + 4) + (5 + 6) + (7 + 8)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1 + 2) + (3 + 4) + (5 + 6) + (7 + 8)
 (3      +  7    ) + (11   ) + (15   )
 (      10       ) + (     26        )
 (                36                 )
@@ -122,13 +122,13 @@ Because this method is always the same, you can just reuse it and plug different
 
 <p>I’m importing these libraries everywhere.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import Data.Monoid
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import Data.Monoid
 import Data.List.Split
 </code></pre></div></div>
 
 <p>The sum example described in the previous section:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- summing
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- summing
 -- some data to work with
 sum_data =  [AdditionTest c | c &lt;- [1..]]
 
@@ -159,16 +159,16 @@ sum_result'' = foldr mappend mempty $ map (foldr mappend mempty) chunks
 <p>Let’s generalise our calculation method. We’ll define a new aggregation function that  just takes a list and applies the mappend function on the elements.
 The start element will again be mempty:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aggregate x = foldl mappend mempty x
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aggregate x = foldl mappend mempty x
 
 -- example of the general function with sum
 sum_result''' = aggregate $ take 100 sum_data
 </code></pre></div></div>
 
-<p>Now, we’ll be able to use the <code class="highlighter-rouge">aggregate</code> function for different monoids.
+<p>Now, we’ll be able to use the <code class="language-plaintext highlighter-rouge">aggregate</code> function for different monoids.
 For example, can we aggregate strings?</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--defining some data to work with
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--defining some data to work with
 string_data = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
 
 --a new type and corresponding monoid
@@ -191,7 +191,7 @@ How about finding a maximum?</p>
 
 <p>Apropos2, is it possible to define 2 monoids for the same data type? For example: an Int monoid for sum and one for product.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--same drill: defining type, data and monoid
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--same drill: defining type, data and monoid
 data MaxTest = MaxTest Int deriving (Show)
 max_data =  [MaxTest c | c &lt;- [1..]]
 
@@ -209,7 +209,7 @@ This one is a bit different, we cannot just add averages together.
 Instead, we just store the sum of all numbers and the amount of numbers we processed. 
 The average can then be calculated by doing sum/occurences.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data AverageData = AverageData { sum:: Int, occurences :: Int }  deriving (Show)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data AverageData = AverageData { sum:: Int, occurences :: Int }  deriving (Show)
 
 average_data = [(AverageData 2 3), (AverageData 2 5)]
 
@@ -234,8 +234,8 @@ average_result = aggregate average_data
 
 <p>###Update</p>
 
-<p><a href="http://www.reddit.com/r/haskell/comments/1yc2vg/opportunities_to_use_monoids/cfjads2">This</a> comment on Reddit by mstksg points out that monoids already have an <code class="highlighter-rouge">aggregate</code> function built in.
-<code class="highlighter-rouge">mconcat</code> is defined as <code class="highlighter-rouge">foldr mappend mempty</code>, almost exactly as I did.</p>
+<p><a href="http://www.reddit.com/r/haskell/comments/1yc2vg/opportunities_to_use_monoids/cfjads2">This</a> comment on Reddit by mstksg points out that monoids already have an <code class="language-plaintext highlighter-rouge">aggregate</code> function built in.
+<code class="language-plaintext highlighter-rouge">mconcat</code> is defined as <code class="language-plaintext highlighter-rouge">foldr mappend mempty</code>, almost exactly as I did.</p>
 
 
 

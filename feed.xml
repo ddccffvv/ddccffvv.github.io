@@ -7,9 +7,45 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Apr 2020 15:22:03 +0200</pubDate>
-    <lastBuildDate>Thu, 09 Apr 2020 15:22:03 +0200</lastBuildDate>
-    <generator>Jekyll v3.6.3</generator>
+    <pubDate>Sun, 20 Jun 2021 07:05:36 +0200</pubDate>
+    <lastBuildDate>Sun, 20 Jun 2021 07:05:36 +0200</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Build Log - June 18th</title>
+        <description>&lt;p&gt;2021 is the year.
+We finally started construction on our new family home!&lt;/p&gt;
+
+&lt;p&gt;This is the build log.&lt;/p&gt;
+
+&lt;h3 id=&quot;june-18th&quot;&gt;June 18th&lt;/h3&gt;
+&lt;p&gt;After two weeks, we finally received a new truckload of lumber. 
+(There is a global shortage right now.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/new_lumber.jpg&quot; alt=&quot;New load of lumber&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This truck also brought us the massive beam we needed to start construction of the ceiling.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/unloading_beam.jpg&quot; alt=&quot;The big one&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The delivery truck also put the beam in place, as we wouldn’t have been able to lift it ourselves.
+Of course, the moment the truck had left, we realised one of the beam’s resting points was a bit to high, so it wasn’t resting properly.
+With some fancy crowbar work, we were able to lift the beam, sand the offending resting point down and put the beam back in place.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/beam_in_place.jpg&quot; alt=&quot;Beam in place&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the beam in place and the new lumber, we can continue construction and start on the ceiling of the ground floor.
+We still need the bulk of the lumber for the ceiling though. That should arrive next week. Fingers crossed!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 07 May 2021 10:30:37 +0200</pubDate>
+        <link>/build-log-june-18.html</link>
+        <guid isPermaLink="true">/build-log-june-18.html</guid>
+        
+        
+        <category>house</category>
+        
+      </item>
     
       <item>
         <title>Quote review: trillion dollar coach</title>
@@ -839,31 +875,6 @@ What gets measured, gets improved. Think very hard on what you want measured, be
         
         
         <category>random</category>
-        
-      </item>
-    
-      <item>
-        <title>It's 2016 and I still managed to have a unicode issue</title>
-        <description>&lt;p&gt;If you ever run into an issue that looks related to unicode/utf (you get characters such as “\00eb”), check if it’s installed on your system.&lt;/p&gt;
-
-&lt;p&gt;I recently was stumped by this, because my sinatra/ruby application worked on my dev machine, but not on the server (I’ve heard that one before! ;-) ).
-Turns out utf wasn’t installed on the server (a debian machine).&lt;/p&gt;
-
-&lt;p&gt;For future reference, it’s easy to install:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;append &lt;em&gt;en_US UTF-8&lt;/em&gt; to /etc/locale.gen&lt;/li&gt;
-  &lt;li&gt;run “locale-gen” as root&lt;/li&gt;
-  &lt;li&gt;(optional) export this variable in your terminal &lt;em&gt;export LANG=en_US.UTF-8&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Make the environment variable available for apache/passenger/ruby. You do this by putting &lt;em&gt;SetEnv LANG en_US.UTF-8&lt;/em&gt; in the appropriate vhost.&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Mon, 08 Feb 2016 09:30:37 +0100</pubDate>
-        <link>/its-2015-and-i-still-had-a-unicode-issue.html</link>
-        <guid isPermaLink="true">/its-2015-and-i-still-had-a-unicode-issue.html</guid>
-        
-        
-        <category>summary</category>
         
       </item>
     
