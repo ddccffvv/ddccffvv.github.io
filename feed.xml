@@ -7,27 +7,27 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 Jun 2021 09:52:05 +0200</pubDate>
-    <lastBuildDate>Sun, 20 Jun 2021 09:52:05 +0200</lastBuildDate>
+    <pubDate>Tue, 22 Jun 2021 19:50:21 +0200</pubDate>
+    <lastBuildDate>Tue, 22 Jun 2021 19:50:21 +0200</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
-        <title>June 9th</title>
+        <title>June 22th</title>
         <description>&lt;p&gt;2021 is the year.
 We finally started construction on our new family home!&lt;/p&gt;
 
 &lt;p&gt;This is the build log.&lt;/p&gt;
 
-&lt;h3 id=&quot;june-9th&quot;&gt;June 9th&lt;/h3&gt;
+&lt;h3 id=&quot;june-22th&quot;&gt;June 22th&lt;/h3&gt;
+&lt;p&gt;Lots of rain for the last two days. 
+We did manage to get some work done on the construction of the ceiling.
+The two longest beams are in place.&lt;/p&gt;
 
-&lt;p&gt;Completed the interior walls on the ground floor.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/interior_walls_complete.jpg&quot; alt=&quot;Interior walls&quot; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&quot;/assets/images/first_ceiling_beam.jpg&quot; alt=&quot;ceiling beams&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 10 May 2021 10:30:37 +0200</pubDate>
-        <link>/build-log-june-9.html</link>
-        <guid isPermaLink="true">/build-log-june-9.html</guid>
+        <pubDate>Tue, 22 Jun 2021 10:30:37 +0200</pubDate>
+        <link>/build-log-june-22.html</link>
+        <guid isPermaLink="true">/build-log-june-22.html</guid>
         
         
         <category>house</category>
@@ -61,9 +61,32 @@ With some fancy crowbar work, we were able to lift the beam, sand the offending 
 We still need the bulk of the lumber for the ceiling though. That should arrive next week. Fingers crossed!&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 07 May 2021 10:30:37 +0200</pubDate>
+        <pubDate>Fri, 18 Jun 2021 10:30:37 +0200</pubDate>
         <link>/build-log-june-18.html</link>
         <guid isPermaLink="true">/build-log-june-18.html</guid>
+        
+        
+        <category>house</category>
+        
+      </item>
+    
+      <item>
+        <title>June 9th</title>
+        <description>&lt;p&gt;2021 is the year.
+We finally started construction on our new family home!&lt;/p&gt;
+
+&lt;p&gt;This is the build log.&lt;/p&gt;
+
+&lt;h3 id=&quot;june-9th&quot;&gt;June 9th&lt;/h3&gt;
+
+&lt;p&gt;Completed the interior walls on the ground floor.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/interior_walls_complete.jpg&quot; alt=&quot;Interior walls&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 09 Jun 2021 10:30:37 +0200</pubDate>
+        <link>/build-log-june-9.html</link>
+        <guid isPermaLink="true">/build-log-june-9.html</guid>
         
         
         <category>house</category>
@@ -793,70 +816,6 @@ They struck a chord with me, so I put them here to ensure I would read them ofte
         
         
         <category>summary</category>
-        
-      </item>
-    
-      <item>
-        <title>Overview of the recent DDoS Attacks (September/October 2016)</title>
-        <description>&lt;p&gt;##The Problem&lt;/p&gt;
-
-&lt;p&gt;With the spreading prevalence of embedded devices online (the “internet of things”), DDoS organisations discovered a new source of bots. 
-Anti-DDoS providers are not prepared for the sudden enormous surge in data/bandwidth that can be directed towards their clients.
-In other words: at the moment, the offense is better than the defense.&lt;/p&gt;
-
-&lt;p&gt;##High profile cases&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;11/9: Krebs on security site was put offline by a DDoS attack twice the size of the biggest attack the anti-DDoS provider had ever seen (600+ GB/s).
-Traffic was a mix of  SYN, GET, POST floods + a substantial % of traffic was spoofed GRE traffic (= unusual).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;23/9: OVH was the target of a DDoS attack. 1000GB/s!!
-Traffic: unknown, probably identical as the Krebs attack.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;21/10: DynDNS was the target of a DDoS attack. DynDNS is the DNS provider for multiple sites. When it went down, its clients also were unreachable: reddit, twitter, paypal,…
-Traffic: targeting the Authorative DNS infrastructure (DNS requests to random subdomains)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;As I understand it, the primary impact of this kind of attacks is on the available bandwidth of the provider.
-With such large volumes reported, this becomes the first problem (as real clients cannot get to the resource due to congestion of the pipe). 
-Of secondary importance is overwhelming of the service itself (application-level DDoS). 
-When the upstream provider becomes able to filter out enough traffic, the attacks can change to target the application itself.
-The bots are abundant enough to exhaust application resources, which will have the same effect from the end-user point of view.&lt;/p&gt;
-
-&lt;p&gt;##Characteristics of the botnet&lt;/p&gt;
-
-&lt;p&gt;The botnet is likely controlled by “Mirai”, software written to command and control mostly embedded devices. 
-The source code of this software was leaked on the internet in September and contains functionality for the standard attacks described above.
-At the time of writing, there are around 200k effected devices online (1.5 million affected devices in total), according to this &lt;a href=&quot;https://intel.malwaretech.com/botnet/mirai/?h=24&quot;&gt;tracker&lt;/a&gt;.
-The botnet is comprised of: 96% IOT (almost all IP cameras made by a Chinese vendor), 4% home routers, less than 1% compromised Linux hosts&lt;/p&gt;
-
-&lt;p&gt;##Mitigation
-Providers are currently scrambling to add more capacity to their offerings.&lt;/p&gt;
-
-&lt;p&gt;On top of that, existing publications designed to limit spoofed IP traffic (a big enabler for most of these attacks) are being reconsidered. 
-Top options are trying to filter ingress traffic (&lt;a href=&quot;http://www.bcp38.info/index.php/Main_Page&quot;&gt;BCP38&lt;/a&gt;) and source address validation (&lt;a href=&quot;https://lasr.cs.ucla.edu/adas/&quot;&gt;SAVE&lt;/a&gt;).
-Implementing one of these would be a huge effort, requiring collaboration from a lot of actors on the internet and it remains to be seen how effective this countermeasures would be. (See &lt;a href=&quot;http://dyn.com/blog/recent-iot-based-attacks-what-is-the-impact-on-managed-dns-operators/&quot;&gt;here&lt;/a&gt; for a counter example).
-In the case of attacks targeting DNS infrastructure, a promising option is &lt;a href=&quot;https://kb.isc.org/article/AA-01000/0/A-Quick-Introduction-to-Response-Rate-Limiting.html&quot;&gt;response-rate limiting&lt;/a&gt;. 
-This mitigation allows a DNS server to drop requests when it sees a sudden surge in requests to a certain resource (with only very small variations).
-Implementing this countermeasure would limit the impact on the attack that brought DynDNS to its knees.&lt;/p&gt;
-
-&lt;p&gt;Taking down the bots (or preventing the control servers to take control) is also a massive undertaking.
-Embedded devices have a historically bad record on security (often shipping with known holes) and patching (it’s extremely difficult to remove the holes once the devices are in the open).
-Still, improving the security of these devices is the best long-term solution and will require effort from all of us in the next decade.&lt;/p&gt;
-
-&lt;p&gt;Currently, your best bet is to have an anti-ddos provider and be in close contact with them. The best ones on the market are: &lt;a href=&quot;https://www.akamai.com/us/en/resources/protect-against-ddos-attacks.jsp&quot;&gt;Akamai&lt;/a&gt;, &lt;a href=&quot;https://www.cloudflare.com/ddos/&quot;&gt;CloudFlare&lt;/a&gt; or &lt;a href=&quot;https://www.incapsula.com/ddos/&quot;&gt;Incapsula&lt;/a&gt;. Additionally, make sure you drop all unwanted traffic as early as possible (at provider if possible, at your network edge,…)&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 01 Nov 2016 09:30:37 +0100</pubDate>
-        <link>/overview-iot-ddos.html</link>
-        <guid isPermaLink="true">/overview-iot-ddos.html</guid>
-        
-        
-        <category>random</category>
         
       </item>
     

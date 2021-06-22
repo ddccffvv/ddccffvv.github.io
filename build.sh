@@ -1,3 +1,6 @@
 #! /bin/bash
 
-bundle exec jekyll build -d blog
+bundle exec jekyll build
+cp -R _site/ ../ddccffvv.github.io/
+
+
